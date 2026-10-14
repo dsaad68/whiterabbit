@@ -53,7 +53,10 @@ a { color: var(--blue); text-underline-offset: .18em; }
 .bar-in { display: flex; align-items: center; gap: 12px; height: 60px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); max-width: 1440px; margin-inline: auto; }
 .bar-in > * { pointer-events: auto; }
 .mark { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); background: rgba(255, 255, 255, .88); border-radius: 999px; padding: 6px 14px 6px 8px; box-shadow: 0 0 0 1px var(--hair); }
-.mark svg { width: 38px; height: 27px; display: block; }
+.mark svg { width: 38px; height: 27px; display: block; --rw: 11; --rwl: 7.5; }
+/* the rabbit's line weight, in its 240-unit box: heavier where it is drawn small */
+.rb .k-main, .rb .k-back { stroke-width: var(--rw, 5); }
+.rb .k-line { stroke-width: var(--rwl, 3.5); }
 .mark b { font: 400 21px/1 var(--f-zh-display); letter-spacing: .04em; color: var(--blue); }
 .bar .sp { flex: 1; }
 .fps { display: none; font: 600 12px/1 var(--f-body); letter-spacing: .06em; color: var(--muted); background: rgba(255, 255, 255, .88); border-radius: 999px; padding: 9px 12px; box-shadow: 0 0 0 1px var(--hair); font-variant-numeric: tabular-nums; align-items: center; gap: 7px; white-space: nowrap; }
@@ -123,7 +126,7 @@ html:lang(zh-Hans) .ch-head h2 { font: 400 var(--step-4)/1.05 var(--f-zh-display
 .band .run { display: flex; gap: 0; height: 100%; align-items: center; white-space: nowrap; will-change: transform; }
 .band .run > span { display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font: 400 26px/1 var(--f-zh-display); color: var(--blue); letter-spacing: .06em; }
 .band .run > span em { font: 700 17px/1 var(--f-display); font-style: normal; letter-spacing: .18em; color: var(--red); font-variation-settings: "SOFT" 100, "opsz" 24; }
-.band .run svg { width: 46px; height: 33px; }
+.band .run svg { width: 46px; height: 33px; --rw: 10; --rwl: 7; }
 
 /* ---------- what it is: 7 candies, one glass ---------- */
 .facts3 { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -160,13 +163,13 @@ html:lang(zh-Hans) .card h3 { font: 700 var(--step-1)/1.35 var(--f-zh); }
 .card p { margin: 0; font-size: var(--step--1); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
 .card .art { height: 56px; display: flex; align-items: end; }
 .card .art:empty { display: none; }
-.card .art svg { height: 100%; width: auto; overflow: visible; }
+.card .art svg { height: 100%; width: auto; overflow: visible; --rw: 10; --rwl: 7; }
 .ground { position: relative; height: 150px; margin-top: 10px; }
 .ground .line { position: absolute; left: 0; right: 0; bottom: 34px; height: 2px; background: repeating-linear-gradient(90deg, var(--blue) 0 10px, transparent 10px 18px); opacity: .35; }
 .ground .dots { position: absolute; inset: 0; will-change: transform; }
 .ground .dot { position: absolute; bottom: 28px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 3px var(--red); }
 .hop { position: absolute; left: 0; bottom: 20px; width: 120px; height: 85px; will-change: transform; transform-origin: 50% 80%; }
-.hop svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.hop svg { width: 100%; height: 100%; overflow: visible; display: block; --rw: 6; --rwl: 4.2; }
 .h-hint { padding-right: var(--gutter-r); padding-left: max(var(--gutter-l), calc((100vw - 1200px) / 2 + 16px)); font: 600 12px/1.5 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
 
 /* ---------- 1972 ---------- */
@@ -204,7 +207,7 @@ html:lang(zh-Hans) .ring-name b { font: 400 var(--step-2)/1.2 var(--f-zh-display
 @media (hover: hover) and (pointer: fine) { .pop { will-change: transform; } }
 .pop:hover { box-shadow: 0 0 0 1.5px var(--blue), 0 26px 50px -34px rgba(19, 41, 92, .45); }
 .pop .ic { width: 64px; height: 64px; }
-.pop .ic svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.pop .ic svg { width: 100%; height: 100%; display: block; overflow: visible; --rw: 10; --rwl: 7; }
 .pop .when { font: 700 13px/1 var(--f-body); letter-spacing: .1em; color: var(--red-ink); font-variant-numeric: lining-nums; }
 html:lang(zh-Hans) .pop .when { font-family: var(--f-zh); letter-spacing: .04em; }
 .pop h3 { margin: 0; font: 650 var(--step-1)/1.2 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 36; color: var(--blue); }
@@ -292,20 +295,19 @@ html:lang(zh-Hans) .kilo b { letter-spacing: 0; }
   <defs>
     <!-- the leaping rabbit, drawn for this page (line art in wrapper blue) -->
     <symbol id="rabbit-sym" viewBox="0 0 240 170">
-      <g fill="#fff" stroke="#1D4EA6" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
-        <path d="M162 52 C142 34 128 10 138 4 C149 -2 168 22 182 48 Z"/>
-        <path d="M78 118 C62 128 40 136 20 135 C11 135 11 126 20 125 C40 122 58 112 70 101 Z"/>
-        <path d="M56 104 C46 80 64 56 98 52 C130 48 160 58 174 78 C184 94 174 114 150 120 C120 128 72 128 56 104 Z"/>
-        <circle cx="54" cy="84" r="12"/>
-        <path d="M186 86 C198 94 210 102 222 106 C229 108 229 99 222 97 C211 93 200 85 192 77 Z"/>
-        <ellipse cx="184" cy="66" rx="27" ry="23"/>
-        <path d="M176 48 C166 24 166 2 178 1 C190 0 194 24 192 48 Z"/>
+      <g class="rb" stroke-linejoin="round" stroke-linecap="round">
+        <path class="k-back" fill="#fff" stroke="#1D4EA6" d="M 162 52 C 142 34 128 10 138 4 C 149 -2 168 22 182 48 Z"/>
+        <path class="k-back" fill="#fff" stroke="#1D4EA6" d="M 78 118 C 62 128 40 136 20 135 C 11 135 11 126 20 125 C 40 122 58 112 70 101 Z"/>
+        <path class="k-main" fill="#fff" stroke="#1D4EA6" d="M 56 104 C 46 80 64 56 98 52 C 130 48 160 58 174 78 C 184 94 174 114 150 120 C 120 128 72 128 56 104 Z"/>
+        <path class="k-main" fill="#fff" stroke="#1D4EA6" d="M 66 84 A 12 12 0 1 0 42 84 A 12 12 0 1 0 66 84 Z"/>
+        <path class="k-main" fill="#fff" stroke="#1D4EA6" d="M 186 86 C 198 94 210 102 222 106 C 229 108 229 99 222 97 C 211 93 200 85 192 77 Z"/>
+        <path class="k-main" fill="#fff" stroke="#1D4EA6" d="M 211 66 A 27 23 0 1 0 157 66 A 27 23 0 1 0 211 66 Z"/>
+        <path class="k-main" fill="#fff" stroke="#1D4EA6" d="M 176 48 C 166 24 166 2 178 1 C 190 0 194 24 192 48 Z"/>
+        <path fill="#F6B4C3" d="M 180 44 C 174 28 174 10 179 9 C 185 9 187 27 186 44 Z"/>
+        <path fill="#E1252B" d="M 197.4 60 A 4.4 4.4 0 1 0 188.6 60 A 4.4 4.4 0 1 0 197.4 60 Z"/>
+        <path fill="#fff" d="M 196 58.4 A 1.4 1.4 0 1 0 193.2 58.4 A 1.4 1.4 0 1 0 196 58.4 Z"/>
+        <path fill="#F6B4C3" d="M 212 69 A 3 3 0 1 0 206 69 A 3 3 0 1 0 212 69 Z"/>
       </g>
-      <path d="M180 44 C174 28 174 10 179 9 C185 9 187 27 186 44 Z" fill="#F6B4C3"/>
-      <circle cx="193" cy="60" r="4.4" fill="#E1252B"/>
-      <circle cx="194.6" cy="58.4" r="1.4" fill="#fff"/>
-      <circle cx="209" cy="69" r="3" fill="#F6B4C3" stroke="#1D4EA6" stroke-width="2"/>
-      <ellipse cx="196" cy="76" rx="7" ry="4" fill="#F6B4C3" opacity=".7"/>
     </symbol>
     <!-- a wrapped candy, side view; colours come from CSS custom properties on the <svg> -->
     <symbol id="candy-sym" viewBox="0 0 170 68">
@@ -389,7 +391,7 @@ html:lang(zh-Hans) .kilo b { letter-spacing: 0; }
     <div class="h-pin" id="hPin">
       <div class="h-stage">
         <div class="track" id="track"></div>
-        <div class="ground" id="ground" aria-hidden="true"><div class="line"></div><div class="dots" id="dots"></div><div class="hop" id="hop"><svg viewBox="0 0 240 170"><g id="hopBody"><use href="#rabbit-sym"/></g></svg></div></div>
+        <div class="ground" id="ground" aria-hidden="true"><div class="line"></div><div class="dots" id="dots"></div><div class="hop" id="hop"><svg viewBox="0 0 240 170"><g id="hopBody" class="rb" stroke-linejoin="round" stroke-linecap="round"></g></svg></div></div>
         <p class="h-hint" data-i18n="hist.hint"></p>
       </div>
     </div>
@@ -1752,29 +1754,30 @@ function frame(now) {
 }
 
 /* ---------------------------------------------------------------- shared drawing */
-function rabbitPath2D() {
-  // the same rabbit as #rabbit-sym, for canvases
-  return {
-    parts: [
-      "M162 52 C142 34 128 10 138 4 C149 -2 168 22 182 48 Z",
-      "M78 118 C62 128 40 136 20 135 C11 135 11 126 20 125 C40 122 58 112 70 101 Z",
-      "M56 104 C46 80 64 56 98 52 C130 48 160 58 174 78 C184 94 174 114 150 120 C120 128 72 128 56 104 Z",
-      "M66 84 A12 12 0 1 0 42 84 A12 12 0 1 0 66 84 Z",
-      "M186 86 C198 94 210 102 222 106 C229 108 229 99 222 97 C211 93 200 85 192 77 Z",
-      "M211 66 A27 23 0 1 0 157 66 A27 23 0 1 0 211 66 Z",
-      "M176 48 C166 24 166 2 178 1 C190 0 194 24 192 48 Z",
-    ].map(d => new Path2D(d)),
-    inner: new Path2D("M180 44 C174 28 174 10 179 9 C185 9 187 27 186 44 Z"),
-  };
-}
-const RAB = rabbitPath2D();
+/* RABBIT:BEGIN · generated by build_rabbit.py from rabbit.json */
+const RABBIT = {"leap":[{"k":"back","d":"M 162 52 C 142 34 128 10 138 4 C 149 -2 168 22 182 48 Z"},{"k":"back","d":"M 78 118 C 62 128 40 136 20 135 C 11 135 11 126 20 125 C 40 122 58 112 70 101 Z"},{"k":"main","d":"M 56 104 C 46 80 64 56 98 52 C 130 48 160 58 174 78 C 184 94 174 114 150 120 C 120 128 72 128 56 104 Z"},{"k":"main","d":"M 66 84 A 12 12 0 1 0 42 84 A 12 12 0 1 0 66 84 Z"},{"k":"main","d":"M 186 86 C 198 94 210 102 222 106 C 229 108 229 99 222 97 C 211 93 200 85 192 77 Z"},{"k":"main","d":"M 211 66 A 27 23 0 1 0 157 66 A 27 23 0 1 0 211 66 Z"},{"k":"main","d":"M 176 48 C 166 24 166 2 178 1 C 190 0 194 24 192 48 Z"},{"k":"pink","d":"M 180 44 C 174 28 174 10 179 9 C 185 9 187 27 186 44 Z"},{"k":"red","d":"M 197.4 60 A 4.4 4.4 0 1 0 188.6 60 A 4.4 4.4 0 1 0 197.4 60 Z"},{"k":"white","d":"M 196 58.4 A 1.4 1.4 0 1 0 193.2 58.4 A 1.4 1.4 0 1 0 196 58.4 Z"},{"k":"pink","d":"M 212 69 A 3 3 0 1 0 206 69 A 3 3 0 1 0 212 69 Z"}],"gather":[{"k":"back","d":"M 162 52 C 142 34 128 10 138 4 C 149 -2 168 22 182 48 Z"},{"k":"back","d":"M 78 118 C 62 128 40 136 20 135 C 11 135 11 126 20 125 C 40 122 58 112 70 101 Z"},{"k":"main","d":"M 56 104 C 46 80 64 56 98 52 C 130 48 160 58 174 78 C 184 94 174 114 150 120 C 120 128 72 128 56 104 Z"},{"k":"main","d":"M 66 84 A 12 12 0 1 0 42 84 A 12 12 0 1 0 66 84 Z"},{"k":"main","d":"M 186 86 C 198 94 210 102 222 106 C 229 108 229 99 222 97 C 211 93 200 85 192 77 Z"},{"k":"main","d":"M 211 66 A 27 23 0 1 0 157 66 A 27 23 0 1 0 211 66 Z"},{"k":"main","d":"M 176 48 C 166 24 166 2 178 1 C 190 0 194 24 192 48 Z"},{"k":"pink","d":"M 180 44 C 174 28 174 10 179 9 C 185 9 187 27 186 44 Z"},{"k":"red","d":"M 197.4 60 A 4.4 4.4 0 1 0 188.6 60 A 4.4 4.4 0 1 0 197.4 60 Z"},{"k":"white","d":"M 196 58.4 A 1.4 1.4 0 1 0 193.2 58.4 A 1.4 1.4 0 1 0 196 58.4 Z"},{"k":"pink","d":"M 212 69 A 3 3 0 1 0 206 69 A 3 3 0 1 0 212 69 Z"}],"stretch":[{"k":"back","d":"M 162 52 C 142 34 128 10 138 4 C 149 -2 168 22 182 48 Z"},{"k":"back","d":"M 78 118 C 62 128 40 136 20 135 C 11 135 11 126 20 125 C 40 122 58 112 70 101 Z"},{"k":"main","d":"M 56 104 C 46 80 64 56 98 52 C 130 48 160 58 174 78 C 184 94 174 114 150 120 C 120 128 72 128 56 104 Z"},{"k":"main","d":"M 66 84 A 12 12 0 1 0 42 84 A 12 12 0 1 0 66 84 Z"},{"k":"main","d":"M 186 86 C 198 94 210 102 222 106 C 229 108 229 99 222 97 C 211 93 200 85 192 77 Z"},{"k":"main","d":"M 211 66 A 27 23 0 1 0 157 66 A 27 23 0 1 0 211 66 Z"},{"k":"main","d":"M 176 48 C 166 24 166 2 178 1 C 190 0 194 24 192 48 Z"},{"k":"pink","d":"M 180 44 C 174 28 174 10 179 9 C 185 9 187 27 186 44 Z"},{"k":"red","d":"M 197.4 60 A 4.4 4.4 0 1 0 188.6 60 A 4.4 4.4 0 1 0 197.4 60 Z"},{"k":"white","d":"M 196 58.4 A 1.4 1.4 0 1 0 193.2 58.4 A 1.4 1.4 0 1 0 196 58.4 Z"},{"k":"pink","d":"M 212 69 A 3 3 0 1 0 206 69 A 3 3 0 1 0 212 69 Z"}]};
+/* RABBIT:END */
+// how each kind of layer is painted (the same rules as the <symbol>)
+const RB_PAINT = { back: ["#fff", 1], main: ["#fff", 1], line: [null, .7], pink: [C.pink, 0], red: [C.red, 0], white: ["#fff", 0] };
+const RAB = RABBIT.leap.map(l => ({ k: l.k, p: new Path2D(l.d) }));
 function drawRabbit(g, x, y, s, color = C.blue, lw = 5) {
   g.save(); g.translate(x, y); g.scale(s, s); g.translate(-120, -85);
-  g.lineJoin = "round"; g.lineCap = "round"; g.lineWidth = lw; g.strokeStyle = color; g.fillStyle = "#fff";
-  for (const p of RAB.parts) { g.fill(p); g.stroke(p); }
-  g.fillStyle = C.pink; g.fill(RAB.inner);
-  g.fillStyle = C.red; g.beginPath(); g.arc(193, 60, 4.4, 0, 7); g.fill();
+  g.lineJoin = "round"; g.lineCap = "round"; g.strokeStyle = color;
+  for (const { k, p } of RAB) {
+    const [fill, w] = RB_PAINT[k];
+    if (fill) { g.fillStyle = fill; g.fill(p); }
+    if (w) { g.lineWidth = lw * w; g.stroke(p); }
+  }
   g.restore();
+}
+// a morph between two poses: every number in the path moves in a straight line
+function rabbitMorph(a, b) {
+  const L = a.map((l, i) => {
+    const ta = l.d.split(" "), tb = b[i].d.split(" ");
+    return { k: l.k, t: ta, na: ta.map(Number), nb: tb.map(Number) };
+  });
+  const f = v => Number.isInteger(v) ? v : v.toFixed(2);
+  return k => L.map(l => l.t.map((tok, j) => isNaN(l.na[j]) ? tok : l.na[j] === l.nb[j] ? tok : f(l.na[j] + (l.nb[j] - l.na[j]) * k)).join(" "));
 }
 
 /* ---------------------------------------------------------------- the printed band */
@@ -2140,7 +2143,18 @@ const glass = (() => {
    ====================================================================== */
 const history = (() => {
   const pin = $("#hPin"), track = $("#track"), dotsBox = $("#dots"), hop = $("#hop"), body = $("#hopBody");
-  let top = 0, travel = 1, x = -1, p = 0, dots = [], speed = 0, lastRx = 0, dir = 1;
+  let top = 0, travel = 1, x = -1, p = 0, dots = [], speed = 0, lastRx = 0, dir = 1, lastK = -1;
+  // the hopping rabbit morphs between its crouch (feet on the ground) and its stretch (mid-air)
+  const RB_ATTR = { back: 'class="k-back" fill="#fff" stroke="#1D4EA6"', main: 'class="k-main" fill="#fff" stroke="#1D4EA6"', line: 'class="k-line" fill="none" stroke="#1D4EA6"', pink: 'fill="#F6B4C3"', red: 'fill="#E1252B"', white: 'fill="#fff"' };
+  body.innerHTML = RABBIT.gather.map(l => `<path ${RB_ATTR[l.k]} d="${l.d}"/>`).join("");
+  const hopPaths = [...body.children], morph = rabbitMorph(RABBIT.gather, RABBIT.stretch);
+  function pose(k) {
+    k = Math.round(k * 100) / 100;
+    if (k === lastK) return;
+    lastK = k;
+    const ds = morph(k);
+    for (let i = 0; i < hopPaths.length; i++) hopPaths[i].setAttribute("d", ds[i]);
+  }
   const yr = v => typeof v === "string" ? v : pick(v);
   function render() {
     track.innerHTML = DATA.timeline.map(it => `<article class="card"><div class="art" aria-hidden="true">${ICONS[it.icon] || ""}</div><div class="yr">${yr(it.year)}</div><h3>${pick(it.t)}</h3><p>${pick(it.d)}</p></article>`).join("");
@@ -2175,10 +2189,11 @@ const history = (() => {
       const sp = dots.length > 1 ? dots[1] - dots[0] : 300, phase = 2 * (rx - (dots[0] || 0)) / sp;
       const air = REDUCE ? 0 : Math.abs(Math.sin(phase * Math.PI));
       const h = air * 46 * speed;
-      const squash = REDUCE ? 1 : 1 - (1 - air) * .14 * speed, stretch = 1 + air * .08 * speed;
       if (v < -2) dir = -1; else if (v > 2) dir = 1;
-      hop.style.transform = `translate3d(${(VW * .3 - 60).toFixed(1)}px, ${(-h).toFixed(2)}px, 0) scale(${(dir * stretch).toFixed(3)}, ${squash.toFixed(3)})`;
-      body.setAttribute("transform", `rotate(${REDUCE ? 0 : (-Math.cos(phase * Math.PI) * 10 * speed).toFixed(2)} 120 110)`);
+      hop.style.transform = `translate3d(${(VW * .3 - 60).toFixed(1)}px, ${(-h).toFixed(2)}px, 0) scaleX(${dir})`;
+      // nose up as it takes off, down as it lands; stretched out at the top of the hop
+      body.setAttribute("transform", `rotate(${REDUCE ? 0 : (-Math.cos(phase * Math.PI) * 7 * speed).toFixed(2)} 120 120)`);
+      pose(REDUCE ? 0 : Math.pow(air, .8) * speed);
     },
   });
 })();
