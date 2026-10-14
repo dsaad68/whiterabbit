@@ -1,0 +1,2198 @@
+<title>White Rabbit Candy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="大白兔奶糖, the White Rabbit creamy candy from Shanghai: what it is, its history since 1943, the 1972 diplomatic gift, its kinds and its place in pop culture, in English, German and Chinese.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Figtree:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap">
+<style>
+/* Layout: the page is the candy's wrapper unrolled — white paper printed in wrapper blue with red,
+   chapters laid out like panels of the print, the candy and the rabbit carrying all the motion.
+   One look by design (the wrapper is white), so there is no dark palette. */
+:root {
+  --paper: #FFFFFF;          /* wrapper paper */
+  --milk: #FBF6E9;           /* the candy */
+  --milk-deep: #EFE2C4;
+  --blue: #1D4EA6;           /* wrapper print */
+  --ink: #13295C;            /* text: the print's darkest blue */
+  --red: #E1252B;            /* wrapper red, used sparingly */
+  --pink: #F6B4C3;           /* inside the rabbit's ears */
+  --muted: #56617C;
+  --hair: rgba(29, 78, 166, .14);
+  --wash: rgba(29, 78, 166, .05);
+
+  --f-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --f-body: "Figtree", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --f-zh-display: "ZCOOL QingKe HuangYou", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --f-zh: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  --step--1: clamp(.82rem, .78rem + .2vw, .92rem);
+  --step-0: clamp(1rem, .95rem + .25vw, 1.12rem);
+  --step-1: clamp(1.2rem, 1.08rem + .6vw, 1.5rem);
+  --step-2: clamp(1.55rem, 1.3rem + 1.3vw, 2.25rem);
+  --step-3: clamp(2.1rem, 1.6rem + 2.6vw, 3.6rem);
+  --step-4: clamp(3rem, 2rem + 5.4vw, 6.4rem);
+
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--paper); color: var(--ink); font: 400 var(--step-0)/1.6 var(--f-body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+html:lang(zh-Hans) body { font-family: var(--f-zh); line-height: 1.75; }
+html:lang(de) body { hyphens: auto; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+:focus-visible { outline: 2.5px solid var(--red); outline-offset: 3px; border-radius: 8px; }
+a { color: var(--blue); text-underline-offset: .18em; }
+.wrap { max-width: 1200px; margin-inline: auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- header ---------- */
+.bar { position: fixed; z-index: 30; left: 0; right: 0; top: 0; padding-top: env(safe-area-inset-top, 0px); pointer-events: none; }
+.bar-in { display: flex; align-items: center; gap: 12px; height: 60px; padding-left: var(--gutter-l); padding-right: var(--gutter-r); max-width: 1440px; margin-inline: auto; }
+.bar-in > * { pointer-events: auto; }
+.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); background: rgba(255, 255, 255, .88); border-radius: 999px; padding: 6px 14px 6px 8px; box-shadow: 0 0 0 1px var(--hair); }
+.mark svg { width: 38px; height: 27px; display: block; }
+.mark b { font: 400 21px/1 var(--f-zh-display); letter-spacing: .04em; color: var(--blue); }
+.bar .sp { flex: 1; }
+.fps { font: 600 12px/1 var(--f-body); letter-spacing: .06em; color: var(--muted); background: rgba(255, 255, 255, .88); border-radius: 999px; padding: 9px 12px; box-shadow: 0 0 0 1px var(--hair); font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+.fps i { width: 7px; height: 7px; border-radius: 50%; background: var(--red); }
+.langs { display: flex; background: rgba(255, 255, 255, .88); border-radius: 999px; padding: 4px; box-shadow: 0 0 0 1px var(--hair); position: relative; }
+.langs button { position: relative; z-index: 1; padding: 7px 13px; border-radius: 999px; font: 600 13px/1 var(--f-body); letter-spacing: .04em; color: var(--muted); transition: color .25s; }
+.langs button[aria-pressed="true"] { color: #fff; }
+.langs button:lang(zh) { font-family: var(--f-zh); letter-spacing: 0; }
+.langs .pill { position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 0; width: 10px; border-radius: 999px; background: var(--blue); transition: transform .45s cubic-bezier(.3, 1.4, .5, 1), width .45s cubic-bezier(.3, 1.4, .5, 1); }
+.progress { position: fixed; z-index: 31; left: 0; top: 0; height: 3px; width: 100%; background: var(--red); transform-origin: 0 50%; transform: scaleX(0); }
+@media (max-width: 520px) { .fps { display: none; } .mark b { font-size: 19px; } .langs button { padding: 7px 10px; } }
+
+/* ---------- hero: the candy unwraps as you scroll ---------- */
+.hero { position: relative; height: 270vh; height: 270svh; }
+.hero-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
+#candy { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-copy { position: absolute; z-index: 2; left: 0; right: 0; top: calc(env(safe-area-inset-top, 0px) + 84px); padding-left: var(--gutter-l); padding-right: var(--gutter-r); max-width: 1440px; margin-inline: auto; }
+.hero-copy .in { max-width: 560px; }
+.eyebrow { margin: 0; font: 600 var(--step--1)/1.2 var(--f-body); letter-spacing: .16em; text-transform: uppercase; color: var(--red); }
+html:lang(zh-Hans) .eyebrow { letter-spacing: .3em; font-family: var(--f-zh); }
+.hero h1 { margin: 14px 0 0; display: grid; gap: 4px; line-height: .9; }
+.hero h1 .zh { font: 400 clamp(4.2rem, 3rem + 9vw, 9.5rem)/1 var(--f-zh-display); color: var(--blue); letter-spacing: .02em; display: flex; }
+.hero h1 .zh span { display: inline-block; will-change: transform; }
+.hero h1 .lat { font: 700 var(--step-3)/1 var(--f-display); font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; letter-spacing: -.02em; color: var(--ink); }
+.hero h1 .lat em { font-style: italic; font-weight: 400; color: var(--red); }
+.lede { margin: 18px 0 0; max-width: 34ch; font-size: var(--step-1); line-height: 1.45; color: var(--ink); text-wrap: pretty; }
+html:lang(zh-Hans) .lede { max-width: 22em; }
+.steps { position: absolute; z-index: 2; left: 0; right: 0; bottom: calc(env(safe-area-inset-bottom, 0px) + 22px); padding-left: var(--gutter-l); padding-right: var(--gutter-r); max-width: 1440px; margin-inline: auto; }
+.steps ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; max-width: 640px; }
+.steps li { min-width: 0; display: grid; gap: 8px; font: 500 var(--step--1)/1.35 var(--f-body); color: var(--muted); transition: color .35s; }
+.steps li .bar2 { height: 3px; border-radius: 3px; background: var(--hair); overflow: hidden; }
+.steps li .bar2 i { display: block; height: 100%; background: var(--blue); transform-origin: 0 50%; transform: scaleX(0); }
+.steps li b { font-weight: 700; color: var(--ink); display: block; }
+.steps li.on { color: var(--ink); }
+.cue { position: absolute; z-index: 2; right: var(--gutter-r); bottom: calc(env(safe-area-inset-bottom, 0px) + 24px); font: 600 12px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.cue i { width: 22px; height: 34px; border-radius: 12px; box-shadow: inset 0 0 0 2px var(--hair); position: relative; }
+.cue i::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--blue); animation: cue 1.8s ease-in-out infinite; }
+@keyframes cue { 0% { transform: translateY(0); opacity: 1; } 70% { transform: translateY(12px); opacity: 0; } 100% { opacity: 0; } }
+@media (orientation: portrait), (max-width: 860px) {
+  .hero-copy { top: calc(env(safe-area-inset-top, 0px) + 76px); }
+  .steps ol { max-width: none; }
+  .cue { display: none; }
+}
+
+/* ---------- chapters ---------- */
+.chapter { position: relative; padding-block: clamp(80px, 12vh, 150px); }
+.ch-head { display: grid; gap: 10px; margin-bottom: clamp(28px, 5vh, 56px); }
+.ch-head .zh { font: 400 var(--step-2)/1 var(--f-zh-display); color: var(--red); letter-spacing: .06em; }
+.ch-head .zh.alt { font: 700 var(--step--1)/1.2 var(--f-body); letter-spacing: .2em; text-transform: uppercase; }
+html:lang(zh-Hans) .hero h1 .lat { font: 400 var(--step-3)/1.05 var(--f-zh-display); letter-spacing: .06em; }
+html:lang(zh-Hans) .hero h1 .lat em { font-style: normal; font-weight: 400; }
+.ch-head h2 { margin: 0; font: 650 var(--step-4)/.95 var(--f-display); font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -.03em; color: var(--blue); text-wrap: balance; }
+html:lang(zh-Hans) .ch-head h2 { font: 400 var(--step-4)/1.05 var(--f-zh-display); letter-spacing: .04em; }
+.ch-head p { margin: 4px 0 0; max-width: 60ch; font-size: var(--step-1); line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.prose p { margin: 0 0 1em; max-width: 62ch; text-wrap: pretty; }
+.prose p:last-child { margin-bottom: 0; }
+.prose b { color: var(--blue); font-weight: 700; }
+.split { display: grid; gap: clamp(32px, 6vw, 80px); }
+.split > * { min-width: 0; }
+@media (min-width: 900px) and (orientation: landscape) { .split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; } .split.flip > :first-child { order: 2; } }
+
+/* the wrapper's printed band between chapters */
+.band { height: 64px; overflow: hidden; border-block: 2px solid var(--blue); background: var(--paper); }
+.band .run { display: flex; gap: 0; height: 100%; align-items: center; white-space: nowrap; will-change: transform; }
+.band .run span { display: inline-flex; align-items: center; gap: 22px; padding-right: 22px; font: 400 26px/1 var(--f-zh-display); color: var(--blue); letter-spacing: .06em; }
+.band .run span em { font: 700 17px/1 var(--f-display); font-style: normal; letter-spacing: .18em; color: var(--red); font-variation-settings: "SOFT" 100, "opsz" 24; }
+.band .run svg { width: 46px; height: 33px; }
+
+/* ---------- what it is: 7 candies, one glass ---------- */
+.facts3 { display: grid; gap: 14px; margin-top: 28px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.facts3 div { min-width: 0; padding: 16px 14px; border-radius: 18px; background: var(--milk); }
+.facts3 b { display: block; font: 700 var(--step-2)/1 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 72; color: var(--blue); font-variant-numeric: tabular-nums; }
+.facts3 span { display: block; margin-top: 8px; font-size: var(--step--1); line-height: 1.35; color: var(--muted); }
+@media (max-width: 420px) { .facts3 { grid-template-columns: 1fr; } .facts3 div { display: flex; align-items: baseline; gap: 12px; } .facts3 span { margin: 0; } }
+.glass-box { position: relative; display: grid; justify-items: center; gap: 18px; padding: 24px 12px 20px; border-radius: 28px; background: linear-gradient(180deg, var(--wash), transparent 70%); }
+.glass-box svg.glass { width: min(260px, 62vw); height: auto; overflow: visible; }
+.tray { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; min-height: 44px; }
+.tray button { width: 64px; height: 30px; border-radius: 8px; position: relative; transition: transform .25s cubic-bezier(.3, 1.6, .5, 1), opacity .25s; }
+.tray button:hover { transform: translateY(-3px) rotate(-4deg); }
+.tray button[disabled] { opacity: .18; transform: scale(.8); cursor: default; }
+.tray button svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.glass-read { text-align: center; font: 600 var(--step-0)/1.3 var(--f-body); color: var(--ink); font-variant-numeric: tabular-nums; }
+.glass-read small { display: block; margin-top: 4px; font-weight: 400; font-size: var(--step--1); color: var(--muted); }
+.glass-ctl { display: flex; gap: 10px; }
+.chip { padding: 10px 16px; border-radius: 999px; font: 600 14px/1 var(--f-body); background: var(--blue); color: #fff; transition: transform .2s; }
+.chip.ghost { background: transparent; color: var(--blue); box-shadow: inset 0 0 0 1.5px var(--hair); }
+.chip:active { transform: scale(.96); }
+.flyer { position: fixed; z-index: 40; left: 0; top: 0; width: 64px; height: 30px; pointer-events: none; will-change: transform; }
+.note { margin-top: 14px; font-size: var(--step--1); color: var(--muted); max-width: 60ch; }
+
+/* ---------- history: a horizontal track, the rabbit hops along it ---------- */
+.history { position: relative; }
+.history .ch-head { padding-top: clamp(80px, 12vh, 150px); }
+.h-pin { position: relative; }
+.h-stage { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; display: grid; align-content: center; }
+.track { display: flex; gap: clamp(18px, 3vw, 36px); padding-left: max(var(--gutter-l), calc((100vw - 1200px) / 2 + 16px)); padding-right: 30vw; will-change: transform; align-items: stretch; }
+.card { flex: none; width: min(78vw, 400px); min-width: 0; padding: 26px 22px 24px; border-radius: 26px; background: var(--paper); box-shadow: 0 0 0 1.5px var(--hair), 0 30px 60px -40px rgba(19, 41, 92, .35); display: grid; align-content: start; gap: 10px; position: relative; }
+.card .yr { font: 700 clamp(2.6rem, 2rem + 2.4vw, 3.8rem)/1 var(--f-display); font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; color: var(--red); letter-spacing: -.03em; font-variant-numeric: lining-nums; }
+.card h3 { margin: 0; font: 650 var(--step-1)/1.2 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 36; color: var(--blue); text-wrap: balance; }
+html:lang(zh-Hans) .card h3 { font: 700 var(--step-1)/1.35 var(--f-zh); }
+.card p { margin: 0; font-size: var(--step--1); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+.card .art { height: 56px; display: flex; align-items: end; }
+.card .art:empty { display: none; }
+.card .art svg { height: 100%; width: auto; overflow: visible; }
+.ground { position: relative; height: 150px; margin-top: 10px; }
+.ground .line { position: absolute; left: 0; right: 0; bottom: 34px; height: 2px; background: repeating-linear-gradient(90deg, var(--blue) 0 10px, transparent 10px 18px); opacity: .35; }
+.ground .dot { position: absolute; bottom: 28px; width: 14px; height: 14px; margin-left: -7px; border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 3px var(--red); }
+.hop { position: absolute; left: 0; bottom: 36px; width: 120px; height: 85px; will-change: transform; }
+.hop svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.h-hint { padding-left: max(var(--gutter-l), calc((100vw - 1200px) / 2 + 16px)); font: 600 12px/1 var(--f-body); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+
+/* ---------- 1972 ---------- */
+.d72 .big { font: 800 clamp(5rem, 3rem + 13vw, 13rem)/.8 var(--f-display); font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; color: var(--red); letter-spacing: -.05em; font-variant-numeric: lining-nums; }
+.gift-box { position: relative; display: grid; place-items: center; min-height: 340px; }
+.gift-box svg { width: min(420px, 86vw); height: auto; overflow: visible; }
+.kilo { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px; margin: 22px 0 8px; }
+.kilo b { font: 750 var(--step-4)/.9 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 144; color: var(--blue); letter-spacing: -.03em; font-variant-numeric: tabular-nums lining-nums; }
+.kilo span { font-size: var(--step-1); color: var(--ink); max-width: 26ch; line-height: 1.3; }
+.caveat { margin-top: 18px; padding: 14px 16px; border-radius: 16px; background: var(--milk); font-size: var(--step--1); line-height: 1.5; color: var(--ink); max-width: 62ch; }
+.caveat b { color: var(--red); }
+
+/* ---------- kinds: the carousel ---------- */
+.ring { position: relative; height: clamp(300px, 40vw, 440px); touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.ring:active { cursor: grabbing; }
+.ring { --iw: clamp(104px, 15vw, 240px); }
+.ring .it { position: absolute; left: 50%; top: 52%; width: var(--iw); height: calc(var(--iw) * .4); margin-left: calc(var(--iw) * -.5); margin-top: calc(var(--iw) * -.2); will-change: transform, opacity; }
+.ring .it svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.ring-name { text-align: center; display: grid; gap: 4px; justify-items: center; min-height: 3.6em; }
+.ring-name b { font: 650 var(--step-2)/1.1 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 72; color: var(--blue); }
+html:lang(zh-Hans) .ring-name b { font: 400 var(--step-2)/1.2 var(--f-zh-display); letter-spacing: .04em; }
+.ring-name span { font-size: var(--step--1); color: var(--muted); }
+.ring-ctl { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+.ring-ctl button { width: 44px; height: 44px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--hair); display: grid; place-items: center; color: var(--blue); }
+.ring-ctl svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.stats { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); margin-top: clamp(30px, 5vh, 54px); }
+.stats div { min-width: 0; padding: 18px 18px 16px; border-radius: 20px; box-shadow: inset 0 0 0 1.5px var(--hair); }
+.stats b { display: block; font: 700 var(--step-3)/1 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 144; color: var(--blue); letter-spacing: -.02em; font-variant-numeric: tabular-nums lining-nums; }
+.stats span { display: block; margin-top: 8px; font-size: var(--step--1); color: var(--muted); line-height: 1.4; }
+
+/* ---------- pop culture ---------- */
+.pops { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); perspective: 900px; }
+@media (max-width: 600px) { .pops { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } .pop { padding: 16px 14px; } .pop .ic { width: 48px; height: 48px; } }
+.pop { min-width: 0; padding: 22px 20px 20px; border-radius: 24px; background: var(--paper); box-shadow: 0 0 0 1.5px var(--hair); display: grid; gap: 10px; align-content: start; transform-style: preserve-3d; will-change: transform; transition: box-shadow .3s; }
+.pop:hover { box-shadow: 0 0 0 1.5px var(--blue), 0 26px 50px -34px rgba(19, 41, 92, .45); }
+.pop .ic { width: 64px; height: 64px; }
+.pop .ic svg { width: 100%; height: 100%; display: block; overflow: visible; }
+.pop .when { font: 700 13px/1 var(--f-body); letter-spacing: .12em; color: var(--red); text-transform: uppercase; font-variant-numeric: lining-nums; }
+.pop h3 { margin: 0; font: 650 var(--step-1)/1.2 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 36; color: var(--blue); }
+html:lang(zh-Hans) .pop h3 { font: 700 var(--step-1)/1.35 var(--f-zh); }
+.pop p { margin: 0; font-size: var(--step--1); line-height: 1.55; }
+
+/* ---------- fun facts: the jar ---------- */
+.jar-box { position: relative; height: clamp(380px, 56vh, 560px); touch-action: pan-y; }
+#jar { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: pointer; }
+.fact { position: relative; padding: 26px 24px 22px; border-radius: 28px; background: var(--milk); min-height: 220px; display: grid; align-content: start; gap: 12px; transform-origin: 50% 0; }
+.fact .n { font: 700 13px/1 var(--f-body); letter-spacing: .14em; color: var(--red); text-transform: uppercase; font-variant-numeric: tabular-nums; }
+html:lang(zh-Hans) .fact .n { letter-spacing: .2em; font-family: var(--f-zh); }
+.fact p { margin: 0; font: 500 var(--step-1)/1.45 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 24; color: var(--ink); text-wrap: pretty; }
+html:lang(zh-Hans) .fact p { font: 500 var(--step-1)/1.7 var(--f-zh); }
+.fact .ctl { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+.all-facts { margin-top: 16px; }
+.all-facts summary { cursor: pointer; font-weight: 600; color: var(--blue); }
+.all-facts ol { margin: 12px 0 0; padding-left: 1.3em; display: grid; gap: 10px; font-size: var(--step--1); }
+
+/* ---------- footer ---------- */
+.foot { padding-block: 56px calc(env(safe-area-inset-bottom, 0px) + 56px); background: var(--blue); color: #fff; }
+.foot a { color: #fff; }
+.foot h2 { margin: 0 0 16px; font: 650 var(--step-2)/1 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 72; }
+html:lang(zh-Hans) .foot h2 { font: 400 var(--step-2)/1.1 var(--f-zh-display); }
+.src { display: grid; gap: 18px 28px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); font-size: var(--step--1); }
+.src > div { min-width: 0; }
+.src h3 { margin: 0 0 8px; font: 700 12px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
+.src ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.src li { overflow-wrap: anywhere; line-height: 1.4; }
+.disc { margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .25); font-size: var(--step--1); opacity: .85; max-width: 80ch; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cue i::after { animation: none; }
+  .langs .pill { transition: none; }
+}
+</style>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<header class="bar">
+  <div class="bar-in">
+    <a class="mark" href="#top" aria-label="White Rabbit, back to the top"><svg viewBox="0 0 240 170" aria-hidden="true"><use href="#rabbit-sym"/></svg><b>大白兔</b></a>
+    <span class="sp"></span>
+    <span class="fps" id="fps" title="Measured frame rate"><i></i><span id="fpsN">— fps</span></span>
+    <div class="langs" role="group" aria-label="Language">
+      <span class="pill" id="langPill" aria-hidden="true"></span>
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" id="lang-de" data-lang="de" aria-pressed="false" lang="de">DE</button>
+      <button type="button" id="lang-zh" data-lang="zh" aria-pressed="false" lang="zh-Hans">中文</button>
+    </div>
+  </div>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- the leaping rabbit, drawn for this page (line art in wrapper blue) -->
+    <symbol id="rabbit-sym" viewBox="0 0 240 170">
+      <g fill="#fff" stroke="#1D4EA6" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M162 52 C142 34 128 10 138 4 C149 -2 168 22 182 48 Z"/>
+        <path d="M78 118 C62 128 40 136 20 135 C11 135 11 126 20 125 C40 122 58 112 70 101 Z"/>
+        <path d="M56 104 C46 80 64 56 98 52 C130 48 160 58 174 78 C184 94 174 114 150 120 C120 128 72 128 56 104 Z"/>
+        <circle cx="54" cy="84" r="12"/>
+        <path d="M186 86 C198 94 210 102 222 106 C229 108 229 99 222 97 C211 93 200 85 192 77 Z"/>
+        <ellipse cx="184" cy="66" rx="27" ry="23"/>
+        <path d="M176 48 C166 24 166 2 178 1 C190 0 194 24 192 48 Z"/>
+      </g>
+      <path d="M180 44 C174 28 174 10 179 9 C185 9 187 27 186 44 Z" fill="#F6B4C3"/>
+      <circle cx="193" cy="60" r="4.4" fill="#E1252B"/>
+      <circle cx="194.6" cy="58.4" r="1.4" fill="#fff"/>
+      <circle cx="209" cy="69" r="3" fill="#F6B4C3" stroke="#1D4EA6" stroke-width="2"/>
+      <ellipse cx="196" cy="76" rx="7" ry="4" fill="#F6B4C3" opacity=".7"/>
+    </symbol>
+    <!-- a wrapped candy, side view; colours come from CSS custom properties on the <svg> -->
+    <symbol id="candy-sym" viewBox="0 0 170 68">
+      <path d="M38 22 L20 33 L4 14 L10 34 L2 40 L10 44 L4 56 L20 37 L38 46 Z" fill="var(--end, #fff)" stroke="#1D4EA6" stroke-width="2.2" stroke-linejoin="round"/>
+      <path d="M132 22 L150 33 L166 14 L160 34 L168 40 L160 44 L166 56 L150 37 L132 46 Z" fill="var(--end, #fff)" stroke="#1D4EA6" stroke-width="2.2" stroke-linejoin="round"/>
+      <rect x="30" y="14" width="110" height="40" rx="16" fill="#fff" stroke="#1D4EA6" stroke-width="2.4"/>
+      <rect x="31.2" y="27" width="107.6" height="14" fill="var(--band, #E1252B)"/>
+      <path d="M44 20 h82" stroke="#1D4EA6" stroke-width="1.6" opacity=".35" stroke-linecap="round"/>
+      <rect x="30" y="14" width="110" height="40" rx="16" fill="url(#candyShade)" stroke="#1D4EA6" stroke-width="2.4"/>
+    </symbol>
+    <linearGradient id="candyShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#13295C" stop-opacity=".10"/>
+      <stop offset=".25" stop-color="#fff" stop-opacity=".0"/>
+      <stop offset=".75" stop-color="#13295C" stop-opacity=".04"/>
+      <stop offset="1" stop-color="#13295C" stop-opacity=".18"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<main>
+  <!-- ======================= hero ======================= -->
+  <section class="hero" id="top" aria-labelledby="h1">
+    <div class="hero-stage">
+      <canvas id="candy" role="img" aria-label="A White Rabbit candy that untwists and unwraps as you scroll"></canvas>
+      <div class="hero-copy">
+        <div class="in">
+          <p class="eyebrow" data-i18n="hero.eyebrow"></p>
+          <h1 id="h1"><span class="zh" lang="zh-Hans" aria-label="大白兔"><span>大</span><span>白</span><span>兔</span></span><span class="lat" data-i18n="hero.title"></span></h1>
+          <p class="lede" data-i18n="hero.lede"></p>
+        </div>
+      </div>
+      <div class="steps" aria-live="polite">
+        <ol id="steps">
+          <li class="on"><span class="bar2"><i></i></span><span><b data-i18n="steps.1t"></b><span data-i18n="steps.1"></span></span></li>
+          <li><span class="bar2"><i></i></span><span><b data-i18n="steps.2t"></b><span data-i18n="steps.2"></span></span></li>
+          <li><span class="bar2"><i></i></span><span><b data-i18n="steps.3t"></b><span data-i18n="steps.3"></span></span></li>
+        </ol>
+      </div>
+      <div class="cue" aria-hidden="true"><i></i><span data-i18n="hero.cue"></span></div>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"><div class="run" id="band1"></div></div>
+
+  <!-- ======================= what it is ======================= -->
+  <section class="chapter" id="what" aria-labelledby="what-h">
+    <div class="wrap">
+      <header class="ch-head"><span class="zh" lang="zh-Hans" data-zh="奶糖" data-en="The candy">奶糖</span><h2 id="what-h" data-i18n="what.title"></h2><p data-i18n="what.sub"></p></header>
+      <div class="split">
+        <div class="prose" data-i18n="what.body"></div>
+        <div class="glass-box" id="glassBox">
+          <svg class="glass" viewBox="0 0 220 300" aria-hidden="true">
+            <defs>
+              <clipPath id="glassIn"><path d="M46 42 L60 266 Q62 284 80 284 L140 284 Q158 284 160 266 L174 42 Z"/></clipPath>
+              <linearGradient id="milkG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F3EAD4"/></linearGradient>
+            </defs>
+            <g clip-path="url(#glassIn)">
+              <rect x="30" y="30" width="160" height="270" fill="#F4F7FC"/>
+              <path id="milk" fill="url(#milkG)" d="M30 300 L190 300 L190 300 L30 300 Z"/>
+              <path id="milkLine" fill="none" stroke="#E7D9B8" stroke-width="2" d=""/>
+              <g id="sunk"></g>
+            </g>
+            <path d="M46 42 L60 266 Q62 284 80 284 L140 284 Q158 284 160 266 L174 42" fill="none" stroke="#1D4EA6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M40 40 L180 40" stroke="#1D4EA6" stroke-width="4" stroke-linecap="round"/>
+            <path d="M62 62 L72 250" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".9"/>
+            <g id="ticks" stroke="#1D4EA6" stroke-width="2" opacity=".35"></g>
+          </svg>
+          <div class="glass-read" id="glassRead" aria-live="polite"></div>
+          <div class="tray" id="tray"></div>
+          <div class="glass-ctl"><button type="button" class="chip" id="pourAll" data-i18n="glass.all"></button><button type="button" class="chip ghost" id="pourReset" data-i18n="glass.reset"></button></div>
+        </div>
+      </div>
+      <div class="facts3" id="facts3"></div>
+      <p class="note" data-i18n="what.note"></p>
+    </div>
+  </section>
+
+  <!-- ======================= history ======================= -->
+  <section class="history" id="history" aria-labelledby="hist-h">
+    <div class="wrap"><header class="ch-head"><span class="zh" lang="zh-Hans" data-zh="历史" data-en="History">历史</span><h2 id="hist-h" data-i18n="hist.title"></h2><p data-i18n="hist.sub"></p></header></div>
+    <div class="h-pin" id="hPin">
+      <div class="h-stage">
+        <div class="track" id="track"></div>
+        <div class="ground" id="ground" aria-hidden="true"><div class="line"></div><div class="hop" id="hop"><svg viewBox="0 0 240 170"><g id="hopBody"><use href="#rabbit-sym"/></g></svg></div></div>
+        <p class="h-hint" data-i18n="hist.hint"></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"><div class="run" id="band2"></div></div>
+
+  <!-- ======================= 1972 ======================= -->
+  <section class="chapter d72" id="gift" aria-labelledby="gift-h">
+    <div class="wrap">
+      <header class="ch-head"><span class="zh" lang="zh-Hans" data-zh="国礼" data-en="State gift">国礼</span><h2 id="gift-h" data-i18n="gift.title"></h2></header>
+      <div class="split">
+        <div>
+          <div class="big" aria-hidden="true">1972</div>
+          <div class="prose" data-i18n="gift.body"></div>
+          <div class="kilo" id="kilo"><b data-count data-i18n="gift.kg"></b><span data-i18n="gift.kgLabel"></span></div>
+          <div class="caveat" data-i18n="gift.caveat"></div>
+        </div>
+        <div class="gift-box" id="giftBox">
+          <svg viewBox="0 0 420 380" aria-hidden="true">
+            <ellipse cx="210" cy="352" rx="150" ry="16" fill="#13295C" opacity=".08"/>
+            <g id="giftCandies"></g>
+            <g id="giftBody">
+              <rect x="80" y="196" width="260" height="150" rx="12" fill="#E1252B"/>
+              <rect x="80" y="196" width="260" height="150" rx="12" fill="url(#boxShade)"/>
+              <rect x="196" y="196" width="28" height="150" fill="#fff"/>
+              <path d="M120 236 h44 M256 236 h44 M120 306 h44 M256 306 h44" stroke="#fff" stroke-width="2" opacity=".35"/>
+            </g>
+            <g id="giftLid">
+              <rect x="66" y="166" width="288" height="42" rx="10" fill="#E1252B"/>
+              <rect x="66" y="166" width="288" height="42" rx="10" fill="url(#lidShade)"/>
+              <rect x="196" y="166" width="28" height="42" fill="#fff"/>
+              <path d="M210 166 C176 120 132 126 140 150 C146 168 190 168 210 166 Z" fill="#fff" stroke="#E7E1D6" stroke-width="2"/>
+              <path d="M210 166 C244 120 288 126 280 150 C274 168 230 168 210 166 Z" fill="#fff" stroke="#E7E1D6" stroke-width="2"/>
+              <circle cx="210" cy="164" r="11" fill="#fff" stroke="#E7E1D6" stroke-width="2"/>
+            </g>
+            <defs>
+              <linearGradient id="boxShade" x1="0" x2="1"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".3" stop-color="#000" stop-opacity="0"/><stop offset=".8" stop-color="#000" stop-opacity=".03"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
+              <linearGradient id="lidShade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= kinds ======================= -->
+  <section class="chapter" id="kinds" aria-labelledby="kinds-h" style="background: var(--milk)">
+    <div class="wrap">
+      <header class="ch-head"><span class="zh" lang="zh-Hans" data-zh="口味" data-en="Flavours">口味</span><h2 id="kinds-h" data-i18n="kinds.title"></h2><p data-i18n="kinds.sub"></p></header>
+      <div class="ring" id="ring" aria-label="Flavours. Drag, or use the arrow buttons, to turn." role="group"></div>
+      <div class="ring-name" aria-live="polite"><b id="ringName"></b><span id="ringNote"></span></div>
+      <div class="ring-ctl"><button type="button" id="ringPrev" aria-label="Previous flavour"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" id="ringNext" aria-label="Next flavour"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      <div class="stats" id="stats"></div>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"><div class="run" id="band3"></div></div>
+
+  <!-- ======================= pop culture ======================= -->
+  <section class="chapter" id="pop" aria-labelledby="pop-h">
+    <div class="wrap">
+      <header class="ch-head"><span class="zh" lang="zh-Hans" data-zh="流行" data-en="Pop culture">流行</span><h2 id="pop-h" data-i18n="pop.title"></h2><p data-i18n="pop.sub"></p></header>
+      <div class="pops" id="pops"></div>
+    </div>
+  </section>
+
+  <!-- ======================= fun facts ======================= -->
+  <section class="chapter" id="facts" aria-labelledby="facts-h" style="padding-top: 0">
+    <div class="wrap">
+      <header class="ch-head"><span class="zh" lang="zh-Hans" data-zh="趣闻" data-en="Fun facts">趣闻</span><h2 id="facts-h" data-i18n="facts.title"></h2><p data-i18n="facts.sub"></p></header>
+      <div class="split">
+        <div class="jar-box" id="jarBox"><canvas id="jar" role="img" aria-label="A glass jar of candies; tap one to read a fun fact"></canvas></div>
+        <div>
+          <div class="fact" id="factCard" aria-live="polite"><span class="n" id="factN"></span><p id="factText"></p>
+            <div class="ctl"><button type="button" class="chip" id="factNext" data-i18n="facts.next"></button></div>
+          </div>
+          <details class="all-facts"><summary data-i18n="facts.all"></summary><ol id="factList"></ol></details>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <h2 data-i18n="foot.sources"></h2>
+    <div class="src" id="sources"></div>
+    <p class="disc" data-i18n="foot.disc"></p>
+  </div>
+</footer>
+
+<script>
+/* ======================================================================
+   Words. Everything the page says, in three languages. Facts were checked
+   against the sources listed in SOURCES.
+   ====================================================================== */
+const UI = {
+  en: {
+    "hero.eyebrow": "Shanghai · since 1943", "hero.title": "Creamy <em>Candy</em>",
+    "hero.lede": "A chewy milk candy in a paper twist, with a second wrapper you can eat.",
+    "hero.cue": "Scroll to unwrap",
+    "steps.1t": "Untwist", "steps.1": "the paper ends", "steps.2t": "Unwrap", "steps.2": "the printed wrapper", "steps.3t": "Eat it all", "steps.3": "the rice paper melts",
+    "what.title": "What it is", "what.sub": "", "what.body": "", "what.note": "",
+    "glass.all": "Drop all seven", "glass.reset": "Empty the glass", "glass.read": "{n} of 7 candies", "glass.full": "One glass of milk", "glass.tap": "Tap a candy",
+    "hist.title": "A short history", "hist.sub": "", "hist.hint": "Keep scrolling · the rabbit hops through the years",
+    "gift.title": "", "gift.body": "", "gift.kg": "", "gift.kgLabel": "", "gift.caveat": "",
+    "kinds.title": "How many kinds", "kinds.sub": "",
+    "pop.title": "Pop culture", "pop.sub": "",
+    "facts.title": "Fun facts", "facts.sub": "Tap a candy in the jar.", "facts.next": "Another one", "facts.all": "All the facts", "facts.n": "Fun fact {i} of {n}",
+    "foot.sources": "Sources", "foot.disc": "",
+  },
+  de: {
+    "hero.eyebrow": "Shanghai · seit 1943", "hero.title": "Sahne<em>bonbon</em>",
+    "hero.lede": "Ein weiches Milchbonbon im gedrehten Papier, mit einer zweiten Hülle, die man mitessen kann.",
+    "hero.cue": "Scrollen zum Auspacken",
+    "steps.1t": "Aufdrehen", "steps.1": "die Papierenden", "steps.2t": "Auspacken", "steps.2": "das bedruckte Papier", "steps.3t": "Alles essen", "steps.3": "das Reispapier schmilzt",
+    "what.title": "Was es ist",
+    "glass.all": "Alle sieben hinein", "glass.reset": "Glas leeren", "glass.read": "{n} von 7 Bonbons", "glass.full": "Ein Glas Milch", "glass.tap": "Tipp auf ein Bonbon",
+    "hist.title": "Eine kurze Geschichte", "hist.hint": "Weiterscrollen · der Hase hüpft durch die Jahre",
+    "kinds.title": "Wie viele Sorten",
+    "pop.title": "Popkultur",
+    "facts.title": "Kurioses", "facts.sub": "Tipp auf ein Bonbon im Glas.", "facts.next": "Noch eins", "facts.all": "Alle Fakten", "facts.n": "Fakt {i} von {n}",
+    "foot.sources": "Quellen",
+  },
+  zh: {
+    "hero.eyebrow": "上海 · 始于1943年", "hero.title": "<em>奶糖</em>",
+    "hero.lede": "一颗包在扭结糖纸里的软糯奶糖，里面还有一层能吃的糯米纸。",
+    "hero.cue": "向下滑动，剥开糖纸",
+    "steps.1t": "拧开", "steps.1": "糖纸两头", "steps.2t": "剥开", "steps.2": "印花糖纸", "steps.3t": "一起吃", "steps.3": "糯米纸入口即化",
+    "what.title": "这是什么糖",
+    "glass.all": "七颗全放进去", "glass.reset": "倒空杯子", "glass.read": "已放 {n} / 7 颗", "glass.full": "一杯牛奶", "glass.tap": "点一颗糖",
+    "hist.title": "简史", "hist.hint": "继续滑动 · 小白兔一年一年往前跳",
+    "kinds.title": "有多少种口味",
+    "pop.title": "流行文化",
+    "facts.title": "趣闻", "facts.sub": "点一点罐子里的糖。", "facts.next": "再来一个", "facts.all": "全部趣闻", "facts.n": "趣闻 {i} / {n}",
+    "foot.sources": "资料来源",
+  },
+};
+/* CONTENT:BEGIN · the words of the page, written from the fact-checked research (sources in DATA.sources) */
+const CONTENT_UI = {
+ "en": {
+  "hero.eyebrow": "Creamy candy · Shanghai · since 1943",
+  "hero.title": "White <em>Rabbit</em>",
+  "hero.lede": "A chewy milk candy from Shanghai, twisted in printed paper, with a second wrapper inside that you eat too.",
+  "what.sub": "Milk, sugar and butter, cooked, whipped with air and cut into small white rolls.",
+  "what.body": "<p>Each candy is a white roll about <b>3 cm long and 1 cm across</b>, made from maltose, sugar, whole milk powder and butter. It weighs about 5 grams and has about 20 kilocalories. Air whipped into the hot candy mass gives it the chew.</p><p>Inside the printed paper twist sits a second, see-through wrapper that you eat. In Chinese it is called 糯米纸, “glutinous rice paper”, but it is a <b>starch film</b> about 0.02 mm thick that melts on the tongue. It keeps the candy from sticking to the paper.</p><p>Generations of Chinese families have repeated that <b>seven White Rabbits make a glass of milk</b>. In calories that is about right. In protein it is about a fifth of a real glass.</p>",
+  "what.note": "Seven candies, about 35 g, give about the same energy as a glass of milk (≈ 630 kJ), but only about 1.5 g of protein against about 7.5 g in 250 ml of milk. In 2019 a White Rabbit-flavoured milk finally made the saying come true.",
+  "hist.sub": "From Shanghai's answer to a pricey British sweet, with Mickey Mouse on the wrapper, to a national icon in red, white and blue.",
+  "gift.title": "Sweets for the president",
+  "gift.body": "<p>In January 1972, a month before Richard Nixon's visit to China, his advance team under Alexander Haig passed through Shanghai. White Rabbit set out for them was so popular that, by one account, they packed the leftovers to take home.</p><p>Premier <b>Zhou Enlai</b> heard about it, and, as Chinese state media tell the story, White Rabbit became a state gift (国礼) for President Nixon. Lu Xiuqin, who worked at the candy factory, later remembered the whole staff being called in at midnight and working through the night to have the candy ready by morning.</p>",
+  "gift.kg": "250+ kg",
+  "gift.kgLabel": "made overnight for Nixon's advance team, as Lu Xiuqin remembered it: “more than 500 jin”.",
+  "gift.caveat": "<b>How many kilos, really?</b> No document from 1972 records a weight. The often repeated “10 jin (5 kg) for every American” has no traceable source, and English figures like “10 kg each” or “500 kg” come from mixing up the jin (斤, half a kilo) with the kilogram. Afterwards, Chinese media say, White Rabbit was exported to the US, where tins of it became an Easter treat.",
+  "kinds.sub": "For decades there was one flavour: milk. New ones arrived from the early 2000s, and by 2023 the brand counted 16 of them. Drag the ring, or use the arrows.",
+  "pop.sub": "A childhood candy that became lip balm, perfume, milk tea, fashion, art and toys.",
+  "foot.disc": "A fan page made for fun. Not affiliated with Shanghai Guan Sheng Yuan Food Co., which owns the 大白兔 / White Rabbit trademarks. The rabbit and the candies are drawn for this page. Figures are the latest published ones we could find; where sources disagree, the page says so."
+ },
+ "de": {
+  "hero.eyebrow": "Sahnebonbon · Shanghai · seit 1943",
+  "hero.title": "White <em>Rabbit</em>",
+  "hero.lede": "Ein weiches Milchbonbon aus Shanghai, in bedrucktes Papier gedreht, mit einer zweiten Hülle darin, die man mitisst.",
+  "what.sub": "Milch, Zucker und Butter, gekocht, luftig geschlagen und zu kleinen weißen Röllchen geschnitten.",
+  "what.body": "<p>Jedes Bonbon ist ein weißes Röllchen, etwa <b>3 cm lang und 1 cm dick</b>, aus Maltose, Zucker, Vollmilchpulver und Butter. Es wiegt rund 5 Gramm und hat etwa 20 Kilokalorien. Die Luft, die in die heiße Bonbonmasse geschlagen wird, macht es so schön zäh.</p><p>Unter dem bedruckten Papier steckt eine zweite, durchsichtige Hülle, die man mitisst. Auf Chinesisch heißt sie 糯米纸, „Klebreispapier“, doch sie ist ein <b>Stärkefilm</b> von etwa 0,02 mm, eigentlich eine Oblate, die auf der Zunge zergeht. Sie verhindert, dass das Bonbon am Papier klebt.</p><p>Generationen chinesischer Familien sagten: <b>Sieben White Rabbits sind ein Glas Milch.</b> Bei den Kalorien stimmt das ungefähr. Beim Eiweiß ist es nur etwa ein Fünftel eines echten Glases.</p>",
+  "what.note": "Sieben Bonbons, rund 35 g, liefern etwa so viel Energie wie ein Glas Milch (≈ 630 kJ), aber nur etwa 1,5 g Eiweiß statt rund 7,5 g in 250 ml Milch. 2019 machte eine Milch mit White-Rabbit-Geschmack den Spruch dann doch noch wahr.",
+  "hist.sub": "Von Shanghais Antwort auf ein teures britisches Bonbon, mit Micky Maus auf dem Papier, zur Ikone in Rot, Weiß und Blau.",
+  "gift.title": "Bonbons für den Präsidenten",
+  "gift.body": "<p>Im Januar 1972, einen Monat vor Richard Nixons Chinabesuch, kam sein Vorausteam unter Alexander Haig durch Shanghai. Das bereitgestellte White Rabbit kam so gut an, dass die Amerikaner einer Schilderung zufolge die Reste einpackten.</p><p>Premier <b>Zhou Enlai</b> erfuhr davon, und so erzählen es Chinas Staatsmedien, White Rabbit wurde zum Staatsgeschenk (国礼) für Präsident Nixon. Lu Xiuqin aus der Bonbonfabrik erinnerte sich später, wie die ganze Belegschaft um Mitternacht gerufen wurde und die Nacht durcharbeitete, damit die Bonbons am Morgen fertig waren.</p>",
+  "gift.kg": "250+ kg",
+  "gift.kgLabel": "über Nacht für Nixons Vorausteam gemacht, so die Erinnerung von Lu Xiuqin: „mehr als 500 Jin“.",
+  "gift.caveat": "<b>Wie viele Kilo wirklich?</b> Kein Dokument von 1972 nennt ein Gewicht. Die oft zitierten „10 Jin (5 kg) für jeden Amerikaner“ lassen sich nicht belegen, und englische Angaben wie „10 kg pro Person“ oder „500 kg“ verwechseln das Jin (斤, ein halbes Kilo) mit dem Kilogramm. Danach, so chinesische Medien, wurde White Rabbit in die USA exportiert, wo die Dosen zum Ostergeschenk wurden.",
+  "kinds.sub": "Jahrzehntelang gab es eine Sorte: Milch. Ab den frühen 2000ern kamen neue dazu, 2023 zählte die Marke 16. Dreh am Ring oder nimm die Pfeile.",
+  "pop.sub": "Ein Kindheitsbonbon, aus dem Lippenbalsam, Parfüm, Milchtee, Mode, Kunst und Spielzeug wurden.",
+  "foot.disc": "Eine Fanseite, aus Spaß gemacht. Keine Verbindung zu Shanghai Guan Sheng Yuan Food Co., der die Marken 大白兔 / White Rabbit gehören. Hase und Bonbons sind für diese Seite gezeichnet. Die Zahlen sind die neuesten veröffentlichten, die wir finden konnten; wo Quellen sich widersprechen, steht das dabei."
+ },
+ "zh": {
+  "hero.eyebrow": "上海 · 始于1943年",
+  "hero.title": "<em>奶糖</em>",
+  "hero.lede": "一颗来自上海的奶糖，裹着拧成结的印花糖纸，里面还有一层可以吃的糯米纸。",
+  "what.sub": "奶粉、糖和黄油熬制、充气打发，再切成一颗颗白色小圆柱。",
+  "what.body": "<p>每颗大白兔都是长约<b>3厘米、直径约1厘米</b>的白色小圆柱，原料是麦芽糖、白砂糖、全脂奶粉和黄油。一颗约重5克，热量约20千卡。熬好的糖坯经过充气搅打，才有了那股嚼劲。</p><p>印花糖纸里面还包着一层透明的薄膜，可以直接吃。它叫“糯米纸”，其实不是糯米做的，而是一层约0.02毫米厚的<b>淀粉膜</b>，入口即化，用来防止奶糖粘住糖纸。</p><p>几代中国人都听过一句话：<b>“七粒大白兔奶糖等于一杯牛奶”</b>。按热量算，大致没错；按蛋白质算，只有一杯牛奶的五分之一左右。</p>",
+  "what.note": "七颗奶糖约35克，热量与一杯牛奶相当（约630千焦），蛋白质却只有约1.5克，而250毫升牛奶约有7.5克。2019年，大白兔奶糖风味牛奶上市，总算让这句话“成了真”。",
+  "hist.sub": "从对标昂贵英国奶糖、印着米老鼠的国产糖，到红白蓝的国民奶糖。",
+  "gift.title": "送给总统的糖",
+  "gift.body": "<p>1972年1月，尼克松访华前一个月，以黑格为首的美方先遣组途经上海。宾馆里摆着大白兔奶糖，美国客人赞不绝口，据一种说法，临走还把没吃完的装进包里带走。</p><p>据官方媒体的说法，<b>周恩来</b>总理得知后，批示将大白兔奶糖作为国礼送给尼克松总统。爱民糖果厂工人陆秀琴回忆，那天半夜全厂工人被叫回厂里加班，彻夜未眠，终于赶在第二天早晨把糖送到。</p>",
+  "gift.kg": "500余斤",
+  "gift.kgLabel": "约250公斤：据陆秀琴回忆，这是全厂通宵为美方先遣组赶制的数量。",
+  "gift.caveat": "<b>到底送了多少？</b>没有任何1972年的档案记载重量。流传甚广的“每人十斤”找不到可靠出处；英文资料里的“每人10公斤”“500公斤”，则是把“斤”误当成了公斤。据国内媒体报道，此后大白兔出口美国，罐装奶糖成了复活节的抢手货。",
+  "kinds.sub": "几十年来只有一种口味：牛奶。2000年代起陆续推出新口味，到2023年已有16种。拖动转盘，或点箭头看看。",
+  "pop.sub": "一颗童年的糖，变成了润唇膏、香水、奶茶、时装、艺术品和潮玩。",
+  "foot.disc": "本页为爱好者制作的趣味页面，与上海冠生园食品有限公司无关，“大白兔”商标归其所有。页面中的兔子和奶糖均为自行绘制。数据取自能找到的最新公开资料；各方说法不一时，页面已注明。"
+ }
+};
+for (const l of Object.keys(CONTENT_UI)) Object.assign(UI[l], CONTENT_UI[l]);
+const DATA = {
+ "facts3": [
+  {
+   "v": {
+    "en": "3 × 1 cm",
+    "de": "3 × 1 cm",
+    "zh": "3 × 1 厘米"
+   },
+   "l": {
+    "en": "a small roll of milk candy",
+    "de": "ein kleines Milchröllchen",
+    "zh": "一颗小小的奶糖圆柱"
+   }
+  },
+  {
+   "v": {
+    "en": "≈ 5 g",
+    "de": "≈ 5 g",
+    "zh": "≈ 5 克"
+   },
+   "l": {
+    "en": "and about 20 kcal each",
+    "de": "und etwa 20 kcal pro Stück",
+    "zh": "每颗热量约20千卡"
+   }
+  },
+  {
+   "v": {
+    "en": "0.02 mm",
+    "de": "0,02 mm",
+    "zh": "0.02 毫米"
+   },
+   "l": {
+    "en": "the edible film inside",
+    "de": "die essbare Hülle innen",
+    "zh": "里面那层能吃的膜"
+   }
+  }
+ ],
+ "timeline": [
+  {
+   "year": "1943",
+   "icon": "factory",
+   "t": {
+    "en": "A Mickey Mouse sweet",
+    "de": "Ein Micky-Maus-Bonbon",
+    "zh": "米老鼠奶糖"
+   },
+   "d": {
+    "en": "Feng Boyong, owner of Shanghai's ABC Candy Factory, admires a British milk candy too dear for most people, and his candy maker Liu Yiqing creates a cheaper milk candy of his own. It sells as ABC Mickey Mouse Candy, in a red Mickey wrapper.",
+    "de": "Feng Boyong, Besitzer der ABC-Bonbonfabrik in Shanghai, schätzt ein britisches Milchbonbon, das sich kaum jemand leisten kann, und sein Bonbonmacher Liu Yiqing entwickelt ein günstigeres eigenes. Sie kommt als „ABC Mickey Mouse“ in rotem Micky-Maus-Papier heraus.",
+    "zh": "上海爱皮西（ABC）糖果厂老板冯伯镛看中了价格昂贵的英国奶糖，请制糖师傅刘义清研制出一款更便宜的国产奶糖，取名“ABC米老鼠糖”，包着红色的米老鼠糖纸。"
+   }
+  },
+  {
+   "year": "1950s",
+   "icon": "factory",
+   "t": {
+    "en": "Goodbye, Mickey",
+    "de": "Tschüss, Micky",
+    "zh": "告别米老鼠"
+   },
+   "d": {
+    "en": "The factory passes into state hands and becomes the Aimin (“love the people”) Candy Factory. An American cartoon mouse no longer fits, and sales slump under makeshift names.",
+    "de": "Die Fabrik wird verstaatlicht und heißt nun Aimin („Liebe das Volk“). Eine amerikanische Comicmaus passt nicht mehr ins Bild, und unter Notnamen bricht der Absatz ein.",
+    "zh": "工厂收归国有，改名爱民糖果厂。来自美国的米老鼠显得“崇洋媚外”，几次临时更名后，销量一落千丈。"
+   }
+  },
+  {
+   "year": "1959",
+   "icon": "rabbit",
+   "t": {
+    "en": "Enter the rabbit",
+    "de": "Auftritt: der Hase",
+    "zh": "大白兔登场"
+   },
+   "d": {
+    "en": "Relaunched with a new wrapper and a reworked recipe as a gift for the tenth National Day of the People's Republic. One production line makes about 800 kg a day, much of it by hand.",
+    "de": "Mit neuem Papier und überarbeitetem Rezept erscheint White Rabbit als Geschenk zum zehnten Nationalfeiertag der Volksrepublik. Eine einzige Linie macht rund 800 kg am Tag, vieles noch von Hand.",
+    "zh": "换上新糖纸、调整配方后，“大白兔”作为国庆十周年献礼产品问世。当时只有一条生产线，日产约800公斤，许多工序仍靠手工。"
+   }
+  },
+  {
+   "year": "1972",
+   "icon": "gift",
+   "t": {
+    "en": "A state gift",
+    "de": "Ein Staatsgeschenk",
+    "zh": "成为国礼"
+   },
+   "d": {
+    "en": "Nixon's advance team falls for the candy in Shanghai, and Premier Zhou Enlai makes White Rabbit a state gift for the president.",
+    "de": "Nixons Vorausteam verliebt sich in Shanghai in die Bonbons, und Premier Zhou Enlai macht White Rabbit zum Staatsgeschenk für den Präsidenten.",
+    "zh": "尼克松访华先遣人员在上海爱上了大白兔，周恩来总理随即批示把大白兔奶糖作为国礼送给尼克松。"
+   }
+  },
+  {
+   "year": "1976",
+   "icon": "factory",
+   "t": {
+    "en": "Four tonnes a day",
+    "de": "Vier Tonnen am Tag",
+    "zh": "日产四吨"
+   },
+   "d": {
+    "en": "The Aimin factory merges into Guan Sheng Yuan, which still makes White Rabbit today. Output jumps from one to four tonnes a day.",
+    "de": "Aimin geht in Guan Sheng Yuan auf, das White Rabbit bis heute herstellt. Die Produktion springt von einer auf vier Tonnen am Tag.",
+    "zh": "爱民糖果厂并入冠生园食品总厂，大白兔至今由冠生园出品。日产量从1吨跃升到4吨。"
+   }
+  },
+  {
+   "year": "1983",
+   "icon": "award",
+   "t": {
+    "en": "A prize, a trademark, a lost mouse",
+    "de": "Ein Preis, eine Marke, eine verlorene Maus",
+    "zh": "获奖、注册与失去的米老鼠"
+   },
+   "d": {
+    "en": "The wrapper wins a national packaging design award and 大白兔 becomes a registered trademark. The old Mickey Mouse name, registered first by a Guangzhou candy factory, ends up sold to Disney for US$40,000.",
+    "de": "Das Papier gewinnt einen nationalen Verpackungspreis, und 大白兔 wird als Marke eingetragen. Den alten Namen Micky Maus lässt sich eine Fabrik in Guangzhou zuerst eintragen und verkauft ihn für 40.000 US-Dollar an Disney.",
+    "zh": "大白兔糖纸获第一届全国包装装潢设计优秀奖，“大白兔”商标正式注册。而“米老鼠”商标被广州一家糖果厂抢注，后以4万美元卖给了迪士尼。"
+   }
+  },
+  {
+   "year": "2008",
+   "icon": "bottle",
+   "t": {
+    "en": "The melamine scare",
+    "de": "Der Melamin-Schock",
+    "zh": "三聚氰胺风波"
+   },
+   "d": {
+    "en": "Singapore finds melamine in the candy, a result of China's contaminated milk powder, and sales stop worldwide. Within weeks White Rabbit is back, made with tested milk powder and carrying a green “no melamine” sticker.",
+    "de": "Singapur findet Melamin in den Bonbons, eine Folge von Chinas verseuchtem Milchpulver, und der Verkauf stoppt weltweit. Wenige Wochen später ist White Rabbit zurück, mit geprüftem Milchpulver und grünem „ohne Melamin“-Aufkleber.",
+    "zh": "新加坡在大白兔奶糖中检出三聚氰胺，源头是受污染的奶粉，大白兔随即在全球停售。几周后，用检测合格奶粉生产、贴着绿色“不含三聚氰胺”标签的新版大白兔重新上架。"
+   }
+  },
+  {
+   "year": "2013",
+   "icon": "factory",
+   "t": {
+    "en": "A bigger kitchen",
+    "de": "Eine größere Küche",
+    "zh": "搬进新家"
+   },
+   "d": {
+    "en": "Production moves from central Shanghai to a new plant in Fengxian, built for up to 50,000 tonnes a year.",
+    "de": "Die Produktion zieht aus dem Zentrum Shanghais in ein neues Werk in Fengxian, ausgelegt auf bis zu 50.000 Tonnen im Jahr.",
+    "zh": "大白兔的生产从上海市区迁往奉贤新基地，设计年产能可达5万吨。"
+   }
+  },
+  {
+   "year": "2019",
+   "icon": "balloon",
+   "t": {
+    "en": "Sixty, and suddenly cool",
+    "de": "Sechzig und plötzlich cool",
+    "zh": "六十岁，忽然很潮"
+   },
+   "d": {
+    "en": "For the 60th birthday a 7-metre inflatable rabbit stands in Shanghai. After a lip balm in 2018, a perfume sells out in seconds and people queue up to four hours for White Rabbit milk tea.",
+    "de": "Zum 60. Geburtstag steht in Shanghai ein 7 Meter hoher aufblasbarer Hase. Nach einem Lippenbalsam 2018 ist ein Parfüm in Sekunden ausverkauft, und für White-Rabbit-Milchtee steht man bis zu vier Stunden an.",
+    "zh": "60岁生日，上海街头立起一只7米高的充气大白兔。继2018年的润唇膏之后，大白兔香水几秒售罄，大白兔奶茶最长要排四个小时。"
+   }
+  },
+  {
+   "year": "2026",
+   "icon": "phone",
+   "t": {
+    "en": "The wrapper goes viral",
+    "de": "Das Papier geht viral",
+    "zh": "糖纸火到海外"
+   },
+   "d": {
+    "en": "The first permanent White Rabbit milk tea shop opens on Nanjing Road in April. In August a post on X calls the wrapper “a masterstroke of graphic design” and is seen about 6 million times.",
+    "de": "Im April eröffnet in der Nanjing Road der erste feste White-Rabbit-Milchteeladen. Im August nennt ein Post auf X das Papier „einen Geniestreich des Grafikdesigns“, rund 6 Millionen Aufrufe.",
+    "zh": "4月，首家大白兔奶茶常设门店在南京路开业。8月，一条X帖子称大白兔糖纸是“平面设计的神来之笔”，浏览量约600万。"
+   }
+  }
+ ],
+ "kinds": [
+  {
+   "band": "#E1252B",
+   "name": {
+    "en": "Original milk",
+    "de": "Milch, das Original",
+    "zh": "经典原味"
+   },
+   "note": {
+    "en": "since 1959",
+    "de": "seit 1959",
+    "zh": "1959年至今"
+   }
+  },
+  {
+   "band": "#8A2E3B",
+   "end": "#F4D6DA",
+   "name": {
+    "en": "Red bean",
+    "de": "Rote Bohne",
+    "zh": "红豆"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#7FA8D8",
+   "end": "#E6EEF8",
+   "name": {
+    "en": "Yogurt",
+    "de": "Joghurt",
+    "zh": "酸奶"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#F2A31B",
+   "end": "#FFF0D2",
+   "name": {
+    "en": "Mango",
+    "de": "Mango",
+    "zh": "芒果"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#F5D33D",
+   "end": "#FFF8D6",
+   "name": {
+    "en": "Banana",
+    "de": "Banane",
+    "zh": "香蕉"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#33B5A5",
+   "end": "#DDF3EF",
+   "name": {
+    "en": "Cool mint",
+    "de": "Kühle Minze",
+    "zh": "清凉薄荷"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#5A3A28",
+   "end": "#EADBCB",
+   "name": {
+    "en": "Chocolate",
+    "de": "Schokolade",
+    "zh": "巧克力"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#A97C5A",
+   "end": "#F1E5D8",
+   "name": {
+    "en": "Tiramisu",
+    "de": "Tiramisu",
+    "zh": "提拉米苏"
+   },
+   "note": {
+    "en": "an ice-cream flavour since 2014",
+    "de": "als Eis-Sorte seit 2014",
+    "zh": "2014年推出的冰淇淋风味"
+   }
+  },
+  {
+   "band": "#E8B22E",
+   "end": "#FFF2C9",
+   "name": {
+    "en": "Corn",
+    "de": "Mais",
+    "zh": "玉米"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#B49A7A",
+   "end": "#F6F0E6",
+   "name": {
+    "en": "Coconut milk",
+    "de": "Kokosmilch",
+    "zh": "椰奶"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#6B3F26",
+   "end": "#EBDDD0",
+   "name": {
+    "en": "Coffee",
+    "de": "Kaffee",
+    "zh": "咖啡"
+   },
+   "note": {
+    "en": "",
+    "de": "",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#E89B2E",
+   "end": "#FDEBCF",
+   "name": {
+    "en": "Osmanthus",
+    "de": "Osmanthus",
+    "zh": "桂花"
+   },
+   "note": {
+    "en": "sweet osmanthus blossom",
+    "de": "Duftblüte",
+    "zh": ""
+   }
+  },
+  {
+   "band": "#B8C33A",
+   "end": "#F2F5D6",
+   "name": {
+    "en": "Durian",
+    "de": "Durian",
+    "zh": "榴莲"
+   },
+   "note": {
+    "en": "for the brave",
+    "de": "für Mutige",
+    "zh": "勇者专属"
+   }
+  },
+  {
+   "band": "#6FA83A",
+   "end": "#E5F1DA",
+   "name": {
+    "en": "Wasabi",
+    "de": "Wasabi",
+    "zh": "芥末"
+   },
+   "note": {
+    "en": "yes, really",
+    "de": "ja, wirklich",
+    "zh": "没错，真有芥末味"
+   }
+  }
+ ],
+ "stats": [
+  {
+   "count": true,
+   "v": {
+    "en": "17",
+    "de": "17",
+    "zh": "17"
+   },
+   "l": {
+    "en": "creamy flavours in 2023: the original plus 16 new ones",
+    "de": "Sahnebonbon-Sorten im Jahr 2023: das Original und 16 neue",
+    "zh": "种奶糖口味（2023年）：经典原味加16种新口味"
+   }
+  },
+  {
+   "count": true,
+   "v": {
+    "en": "27,000 t",
+    "de": "27.000 t",
+    "zh": "27,000 吨"
+   },
+   "l": {
+    "en": "made in 2019: 27 million kilos, roughly 5 billion candies",
+    "de": "Produktion 2019: 27 Millionen Kilo, rund 5 Milliarden Bonbons",
+    "zh": "2019年产量：2700万公斤，约合50亿颗"
+   }
+  },
+  {
+   "count": true,
+   "v": {
+    "en": "800 kg",
+    "de": "800 kg",
+    "zh": "800 公斤"
+   },
+   "l": {
+    "en": "a day in 1959, from a single production line",
+    "de": "am Tag im Jahr 1959, auf einer einzigen Linie",
+    "zh": "1959年的日产量，当时只有一条生产线"
+   }
+  },
+  {
+   "count": false,
+   "v": {
+    "en": "40+",
+    "de": "40+",
+    "zh": "40+"
+   },
+   "l": {
+    "en": "countries where it is sold; in 2023, 1,196 t went to 26 of them",
+    "de": "Länder, in denen es verkauft wird; 2023 gingen 1.196 t in 26 davon",
+    "zh": "个国家和地区有售；2023年出口1196吨，销往其中26个"
+   }
+  }
+ ],
+ "pops": [
+  {
+   "icon": "lipbalm",
+   "when": "2018",
+   "t": {
+    "en": "Lip balm",
+    "de": "Lippenbalsam",
+    "zh": "润唇膏"
+   },
+   "d": {
+    "en": "With MAXAM (美加净): the first 920 sold out in seconds on Tmall. A restock of 10,000 two-packs lasted three hours.",
+    "de": "Mit MAXAM (美加净): Die ersten 920 waren auf Tmall in Sekunden weg, 10.000 nachgelieferte Doppelpacks hielten drei Stunden.",
+    "zh": "与美加净联名：首批920支在天猫几秒抢光，补货的1万套也在3小时内售罄。"
+   }
+  },
+  {
+   "icon": "perfume",
+   "when": "2019",
+   "t": {
+    "en": "Perfume",
+    "de": "Parfüm",
+    "zh": "香水"
+   },
+   "d": {
+    "en": "Scent Library's “Happy Childhood” line: 14,000 items in ten minutes, and the 610 gift sets went in three seconds.",
+    "de": "Die Linie „Glückliche Kindheit“ von Scent Library: 14.000 Stück in zehn Minuten, die 610 Geschenksets waren in drei Sekunden weg.",
+    "zh": "气味图书馆“快乐童年”系列：开售10分钟卖出1.4万件，610份限量礼盒3秒售罄。"
+   }
+  },
+  {
+   "icon": "milktea",
+   "when": "2019",
+   "t": {
+    "en": "Milk tea",
+    "de": "Milchtee",
+    "zh": "奶茶"
+   },
+   "d": {
+    "en": "A pop-up in Shanghai sold over 100,000 cups, with queues of up to four hours. Since April 2026 there is a permanent shop at 371 Nanjing Road East.",
+    "de": "Ein Pop-up in Shanghai verkaufte über 100.000 Becher, bei bis zu vier Stunden Wartezeit. Seit April 2026 gibt es einen festen Laden in der Nanjing Road Ost 371.",
+    "zh": "上海快闪店卖出10万多杯，排队最长4小时。2026年4月，首家常设奶茶店在南京东路371号开业。"
+   }
+  },
+  {
+   "icon": "icecream",
+   "when": "2019",
+   "t": {
+    "en": "Ice cream",
+    "de": "Eiscreme",
+    "zh": "冰淇淋"
+   },
+   "d": {
+    "en": "An unofficial White Rabbit ice cream from a Los Angeles parlour went viral; Toronto's Wong's had made one in 2017. The official ice cream bar arrived in 2020.",
+    "de": "Ein inoffizielles White-Rabbit-Eis aus Los Angeles ging viral, Wong's in Toronto hatte schon 2017 eins gemacht. Das offizielle Eis am Stiel kam 2020.",
+    "zh": "洛杉矶一家冰淇淋店未经授权推出大白兔口味，意外走红；多伦多的Wong's早在2017年就做过。正版大白兔雪糕2020年上市。"
+   }
+  },
+  {
+   "icon": "frame",
+   "when": "1979",
+   "t": {
+    "en": "Art",
+    "de": "Kunst",
+    "zh": "艺术"
+   },
+   "d": {
+    "en": "Joseph Beuys screenprinted the wrapper onto a filing card: “Chinesischer Hasenzucker” (Chinese hare sugar), an edition of 90. Copies are at Tate and The Broad.",
+    "de": "Joseph Beuys druckte das Papier im Siebdruck auf eine Karteikarte: „Chinesischer Hasenzucker“, Auflage 90. Exemplare besitzen die Tate und The Broad.",
+    "zh": "约瑟夫·博伊斯把大白兔糖纸丝网印在一张卡片上，作品名《中国兔子糖》，限量90份，泰特美术馆和布罗德美术馆均有收藏。"
+   }
+  },
+  {
+   "icon": "shirt",
+   "when": "2022",
+   "t": {
+    "en": "Fashion",
+    "de": "Mode",
+    "zh": "时装"
+   },
+   "d": {
+    "en": "Coach launched a White Rabbit collection in red, white and blue in 2022. The first fashion line came from LEDIN in 2019.",
+    "de": "Coach brachte 2022 eine White-Rabbit-Kollektion in Rot, Weiß und Blau. Die erste Modelinie kam 2019 von LEDIN.",
+    "zh": "2022年，Coach推出红白蓝的大白兔联名系列；第一次服装联名是2019年的乐町。"
+   }
+  },
+  {
+   "icon": "plush",
+   "when": "2024",
+   "t": {
+    "en": "Toys and games",
+    "de": "Spielzeug und Spiele",
+    "zh": "潮玩与游戏"
+   },
+   "d": {
+    "en": "A ROBBi “Cyber Sweet” figure sold out on day one at DesignerCon in Las Vegas. Arknights (2025) and Honkai: Star Rail (2026, 400,000 gift boxes) followed with tie-ins.",
+    "de": "Eine ROBBi-Figur „Cyber Sweet“ war auf der DesignerCon in Las Vegas am ersten Tag ausverkauft. Arknights (2025) und Honkai: Star Rail (2026, 400.000 Geschenkboxen) folgten mit Kooperationen.",
+    "zh": "与ROBBi联名的“赛博甜心”手办在拉斯维加斯DesignerCon首日售罄；《明日方舟》（2025）和《崩坏：星穹铁道》（2026，限量40万份礼盒）也相继联动。"
+   }
+  },
+  {
+   "icon": "wedding",
+   "when": "1970s–",
+   "t": {
+    "en": "Weddings and New Year",
+    "de": "Hochzeit und Neujahr",
+    "zh": "喜糖与年货"
+   },
+   "d": {
+    "en": "For generations a favourite wedding candy and New Year treat. On family visits, the elders press a handful into every child's pocket.",
+    "de": "Seit Generationen beliebt als Hochzeitsbonbon und zum Neujahrsfest. Bei Familienbesuchen stecken die Älteren jedem Kind eine Handvoll in die Tasche.",
+    "zh": "几代人的喜糖和年货。走亲戚时，长辈总会往每个孩子兜里塞上一把。"
+   }
+  },
+  {
+   "icon": "phone",
+   "when": "2026",
+   "t": {
+    "en": "Wrapper fame",
+    "de": "Papier-Ruhm",
+    "zh": "糖纸出圈"
+   },
+   "d": {
+    "en": "An X post calling the wrapper “a masterstroke of graphic design” drew about 6 million views, and the replies filled up with White Rabbit tattoos.",
+    "de": "Ein Post auf X, der das Papier „einen Geniestreich des Grafikdesigns“ nannte, kam auf rund 6 Millionen Aufrufe, und in den Antworten tauchten White-Rabbit-Tattoos auf.",
+    "zh": "一条称大白兔糖纸为“平面设计神来之笔”的X帖子获得约600万次浏览，评论区里晒出了不少大白兔纹身。"
+   }
+  }
+ ],
+ "facts": [
+  {
+   "en": "The “rice paper” has no rice in it. It is a starch film about 0.02 mm thick, so thin it dissolves on your tongue.",
+   "de": "Im „Reispapier“ ist kein Reis. Es ist ein Stärkefilm von rund 0,02 mm, so dünn, dass er auf der Zunge zergeht. Eigentlich eine Oblate.",
+   "zh": "“糯米纸”里其实没有糯米。它是一层约0.02毫米厚的淀粉膜，薄得一放进嘴里就化了。"
+  },
+  {
+   "en": "To keep copycats away, the maker also registered look-alike names: Big Grey Rabbit (大灰兔), Big Black Rabbit (大黑兔) and Big Spotted Rabbit (大花兔).",
+   "de": "Gegen Nachahmer ließ der Hersteller auch ähnliche Namen schützen: Großer grauer Hase (大灰兔), Großer schwarzer Hase (大黑兔) und Großer gefleckter Hase (大花兔).",
+   "zh": "为了防止山寨，冠生园还注册了一串“近亲”商标：大灰兔、大黑兔、大花兔……"
+  },
+  {
+   "en": "Joseph Beuys never went to China, but in 1979 he turned the wrapper into art and called it “Chinesischer Hasenzucker”, Chinese hare sugar. Hare or rabbit? The Chinese 兔 doesn't tell the two apart.",
+   "de": "Joseph Beuys war nie in China, machte 1979 aber aus dem Papier Kunst: „Chinesischer Hasenzucker“. Hase oder Kaninchen? Das chinesische 兔 unterscheidet die beiden gar nicht.",
+   "zh": "约瑟夫·博伊斯从没去过中国，却在1979年把大白兔糖纸做成了艺术品，德文原名直译是“中国野兔糖”。其实中文的“兔”本来就不分家兔和野兔。"
+  },
+  {
+   "en": "At a Beuys show in Shanghai that opened in 2018, the How Art Museum heaped free White Rabbit under that print. By June 2019, the museum said, visitors had eaten about a tonne. “I'm not eating candy,” one said, “I'm eating art.”",
+   "de": "In einer Beuys-Ausstellung, die 2018 in Shanghai eröffnete, häufte das How Art Museum unter diesem Druck kostenlose White Rabbits auf. Bis Juni 2019, so das Museum, aßen die Besucher rund eine Tonne. „Ich esse keine Bonbons“, sagte einer, „ich esse Kunst.“",
+   "zh": "2018年开幕的博伊斯展上，上海昊美术馆在这件作品下堆满免费的大白兔。据美术馆介绍，到2019年6月，观众已吃掉约一吨。有人边吃边说：“我吃的不是糖，是艺术。”"
+  },
+  {
+   "en": "In the early years every pot of candy syrup was beaten by hand for 40 minutes.",
+   "de": "In den frühen Jahren wurde jeder Topf Bonbonmasse 40 Minuten lang von Hand geschlagen.",
+   "zh": "早年间，每一锅糖浆都要由工人手工打制40分钟。"
+  },
+  {
+   "en": "Fresh candy mass turns slightly yellow. The maker says a purely mechanical “pulling white” step (拉白) makes it white again, with no additives.",
+   "de": "Frische Bonbonmasse wird leicht gelblich. Laut Hersteller macht sie ein rein mechanischer Schritt, das „Weißziehen“ (拉白), wieder weiß, ganz ohne Zusätze.",
+   "zh": "刚搅好的糖坯会微微发黄。据冠生园介绍，靠一道纯物理的“拉白”工艺就能让它重新变白，不加任何添加剂。"
+  },
+  {
+   "en": "In 2019 the factory made 27,000 tonnes. At about 5 g a candy, that is roughly 15 million White Rabbits a day.",
+   "de": "2019 produzierte die Fabrik 27.000 Tonnen. Bei rund 5 g pro Bonbon sind das etwa 15 Millionen White Rabbits am Tag.",
+   "zh": "2019年大白兔产量2.7万吨。按每颗约5克算，相当于每天约1500万颗。"
+  },
+  {
+   "en": "Chinese New Year is the big season: in December 2022 and January 2023 alone, White Rabbit sold 400 million yuan worth, about a third of the year.",
+   "de": "Neujahr ist Hochsaison: Allein im Dezember 2022 und Januar 2023 setzte White Rabbit 400 Millionen Yuan um, etwa ein Drittel des Jahres.",
+   "zh": "春节是旺季：仅2022年12月至2023年1月，大白兔奶糖就卖了4亿元，约占全年销售额的三分之一。"
+  },
+  {
+   "en": "At a 1972 banquet for the American advance team, Shanghai also gave every guest liqueur chocolates, each filled with a different Chinese spirit, Moutai among them.",
+   "de": "Beim Bankett für das amerikanische Vorausteam 1972 bekam außerdem jeder Gast Likörpralinen, jede mit einem anderen chinesischen Schnaps gefüllt, darunter Moutai.",
+   "zh": "1972年招待美方先遣组的宴会上，上海还送给每位美国客人一份益民一厂的酒心巧克力，每颗里装着不同的中国名酒：茅台、竹叶青、五粮液……"
+  },
+  {
+   "en": "The wrapper isn't one trademark but eight: the maker registered its parts separately.",
+   "de": "Das Papier ist nicht eine Marke, sondern acht: Der Hersteller hat seine Teile einzeln eintragen lassen.",
+   "zh": "一张糖纸，拆成了8件商标分别注册。"
+  },
+  {
+   "en": "For the 2023 Year of the Rabbit, Shanghai's Oriental Pearl Tower glowed in White Rabbit red, white and blue for a month.",
+   "de": "Zum Jahr des Hasen 2023 leuchtete Shanghais Oriental Pearl Tower einen Monat lang in White-Rabbit-Rot, -Weiß und -Blau.",
+   "zh": "2023兔年春节，东方明珠塔亮起大白兔经典的红、白、蓝，持续了约一个月。"
+  },
+  {
+   "en": "The rabbit has changed poses. The 1983 trademark shows it sitting, later registrations show it running, and the 2001 redesign, the brand says, made the still rabbit “stand up”.",
+   "de": "Der Hase hat seine Haltung gewechselt: Die Marke von 1983 zeigt ihn sitzend, spätere Eintragungen laufend, und mit der Neugestaltung 2001, so die Marke, „stand“ der ruhende Hase „auf“.",
+   "zh": "这只兔子换过好几种姿势：1983年注册的商标是坐着的，后来的商标是奔跑的；据光明食品介绍，2001年的改版让原先静态的兔子“站了起来”。"
+  },
+  {
+   "en": "“Seven White Rabbits make a glass of milk” was never the factory's slogan. A veteran of the factory said ordinary people came up with it in the lean years around 1960, when milk was scarce and they dissolved the candies in hot water.",
+   "de": "„Sieben White Rabbits sind ein Glas Milch“ war nie der Werbespruch der Fabrik. Ein alter Mitarbeiter erzählte, die Leute hätten ihn sich in den Mangeljahren um 1960 selbst ausgedacht, als Milch knapp war und sie die Bonbons in heißem Wasser auflösten.",
+   "zh": "“七粒大白兔奶糖等于一杯牛奶”其实不是厂家的广告语。据老师傅回忆，这是三年困难时期牛奶紧缺，老百姓用热水泡奶糖，自己总结出来的说法。"
+  },
+  {
+   "en": "White Rabbit once had a little sister: Big Red Rabbit (大红兔), a cocoa candy in red packaging. It never caught on and was dropped.",
+   "de": "White Rabbit hatte einmal eine kleine Schwester: Big Red Rabbit (大红兔), ein Kakaobonbon in roter Verpackung. Es kam nie richtig an und verschwand wieder.",
+   "zh": "大白兔还有过一个“妹妹”：红色包装、可可口味的大红兔。它一直不太受欢迎，后来就停产了。"
+  },
+  {
+   "en": "Premier Zhou Enlai is said to have kept White Rabbits on his desk for late nights of work. In 2008 the Associated Press called them his favourite late-night snack.",
+   "de": "Premier Zhou Enlai soll für lange Arbeitsnächte White Rabbits auf dem Schreibtisch gehabt haben. Die Associated Press nannte sie 2008 seinen liebsten Mitternachtssnack.",
+   "zh": "据说周恩来总理办公桌上常备大白兔，供深夜工作时吃。美联社2008年称它是周总理最爱的夜宵零食。"
+  }
+ ],
+ "sources": [
+  {
+   "h": {
+    "en": "History",
+    "de": "Geschichte",
+    "zh": "历史"
+   },
+   "items": [
+    {
+     "url": "https://wenhui.whb.cn/zhuzhan/xueren/20180921/213925.html",
+     "title": "Wenhui Bao (2018): from Mickey Mouse to White Rabbit"
+    },
+    {
+     "url": "http://www.gsygroup.com/plus/list.php?tid=24",
+     "title": "Guan Sheng Yuan: brand history"
+    },
+    {
+     "url": "https://web.archive.org/web/2012/http://www.china.com.cn/photo/xzg60/jgwy/2009-08/11/content_18399161_4.htm",
+     "title": "China.com.cn (2009): 50 years of White Rabbit"
+    },
+    {
+     "url": "https://www.brightfood.com/default/detail?id=42955",
+     "title": "Bright Food (2019): the 60th anniversary"
+    },
+    {
+     "url": "https://www.nas.gov.sg/archivesonline/data/pdfdoc/AVA20080921001.pdf",
+     "title": "Singapore AVA (2008): melamine finding"
+    },
+    {
+     "url": "https://www.chinanews.com/cj/xfsh/news/2008/10-15/1413486.shtml",
+     "title": "China News (2008): back on sale"
+    },
+    {
+     "url": "https://www.chinanews.com.cn/cj/2012/01-16/3608123.shtml",
+     "title": "China News (2012): the Fengxian plant"
+    },
+    {
+     "url": "https://web.archive.org/web/20130622150236/http://xwcb.eastday.com/c/20111223/u1a948655.html",
+     "title": "Xinwen Chenbao (2011): the factory veterans remember"
+    },
+    {
+     "url": "https://www.ciplawyer.cn/articles/154316.html",
+     "title": "China IP Lawyer: the White Rabbit trademarks"
+    }
+   ]
+  },
+  {
+   "h": {
+    "en": "1972",
+    "de": "1972",
+    "zh": "1972年"
+   },
+   "items": [
+    {
+     "url": "https://english.news.cn/20260812/14ffa94154c149db8cfe52cdd18db6ec/c.html",
+     "title": "Xinhua (2026): a state gift to Nixon"
+    },
+    {
+     "url": "https://wenhui.whb.cn/third/baidu/201905/06/260610.html",
+     "title": "Wenhui Bao (2019): Lu Xiuqin's night shift"
+    },
+    {
+     "url": "https://history.state.gov/historicaldocuments/frus1969-76v17/ch4",
+     "title": "US State Dept., FRUS: Haig's advance party, January 1972"
+    },
+    {
+     "url": "https://paper.xinmin.cn/html/xmzk/2022-02-21/32/27321.html",
+     "title": "Xinmin Weekly (2022): Shanghai's 1972 gifts"
+    },
+    {
+     "url": "https://www.seattletimes.com/nation-world/milk-scandal-hits-chinas-white-rabbit-candy",
+     "title": "AP via Seattle Times (2008)"
+    },
+    {
+     "url": "http://shanghai.xinmin.cn/xmsq/2017/06/18/31104786.html",
+     "title": "Xinmin Evening News (2017): Zhou Enlai's late-night candy"
+    }
+   ]
+  },
+  {
+   "h": {
+    "en": "The candy and its numbers",
+    "de": "Bonbon und Zahlen",
+    "zh": "奶糖与数字"
+   },
+   "items": [
+    {
+     "url": "https://www.waiyeehong.com/food-ingredients/snacks-sweets/chocolates-sweets-candies/white-rabbit-creamy-candy-original-1",
+     "title": "Ingredients label (UK)"
+    },
+    {
+     "url": "https://m.thepaper.cn/baijiahao_5336307",
+     "title": "The Paper (2019): 27,000 tonnes"
+    },
+    {
+     "url": "https://paper.cnstock.com/html/2023-03/22/content_1738387.htm",
+     "title": "Shanghai Securities News (2023): 16 new flavours, New Year sales"
+    },
+    {
+     "url": "https://www.costco.ca/p/-/white-rabbit-assorted-candies-2-880-g/4000345694",
+     "title": "Costco Canada (2026): 12-flavour box"
+    },
+    {
+     "url": "https://www.brightfood.com/default/detail?id=6463",
+     "title": "Bright Food: 50,000 tonnes a year"
+    },
+    {
+     "url": "https://www.163.com/dy/article/IPQ69O0V05506BEH.html",
+     "title": "Wenhui Bao via 163 (2024): 2023 exports"
+    }
+   ]
+  },
+  {
+   "h": {
+    "en": "Pop culture",
+    "de": "Popkultur",
+    "zh": "流行文化"
+   },
+   "items": [
+    {
+     "url": "https://www.thepaper.cn/newsDetail_forward_2463089",
+     "title": "The Paper (2018): the lip balm"
+    },
+    {
+     "url": "http://www.ce.cn/cysc/sp/info/201905/24/t20190524_32179586.shtml",
+     "title": "China Economic Net (2019): the perfume"
+    },
+    {
+     "url": "http://global.chinadaily.com.cn/a/201906/03/WS5cf4ffb0a310519142700cbf.html",
+     "title": "China Daily (2019): the milk tea queues"
+    },
+    {
+     "url": "http://en.people.cn/business/n3/2019/0305/c90778-9552454.html",
+     "title": "People's Daily (2019): the LA ice cream"
+    },
+    {
+     "url": "https://www.tate.org.uk/art/artworks/beuys-chinese-hare-sugar-p07601",
+     "title": "Tate: Beuys, Chinese Hare Sugar (1979)"
+    },
+    {
+     "url": "https://www.trueart.com/news/342619.html",
+     "title": "How Art Museum via Trueart (2019): a tonne of candy"
+    },
+    {
+     "url": "https://www.straitstimes.com/asia/east-asia/chinas-white-rabbit-milk-candy-wrapper-a-social-media-star-in-the-west",
+     "title": "Straits Times (2026): the viral wrapper"
+    },
+    {
+     "url": "https://www.gzw.sh.gov.cn/shgzw_zxzx_gqdt/20260423/b7b0e4ef02554a848346bac569ffe3c8.html",
+     "title": "Shanghai SASAC (2026): the Nanjing Road shop"
+    }
+   ]
+  }
+ ]
+};
+/* CONTENT:END */
+</script>
+
+<script>
+/* line-art icons for the pop-culture cards, in the wrapper's blue and red */
+window.WR_ICONS = (() => {
+  const B = 'stroke="#1D4EA6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"';
+  return {
+    lipbalm: `<svg viewBox="0 0 64 64"><rect x="21" y="27" width="22" height="31" rx="5" fill="#fff" ${B}/><rect x="22.3" y="37" width="19.4" height="9" fill="#E1252B"/><path d="M24 27 V15 Q32 6 40 15 V27 Z" fill="#F6B4C3" ${B}/><path d="M27 52 h10" ${B}/></svg>`,
+    perfume: `<svg viewBox="0 0 64 64"><rect x="15" y="26" width="34" height="32" rx="9" fill="#fff" ${B}/><rect x="26" y="15" width="12" height="11" rx="2" fill="#E1252B" ${B}/><path d="M32 15 V10 h9" ${B}/><circle cx="48" cy="8" r="1.8" fill="#1D4EA6"/><circle cx="53" cy="12" r="1.5" fill="#1D4EA6"/><circle cx="52" cy="5" r="1.3" fill="#1D4EA6"/><path d="M22 40 q10 -6 20 0" ${B} fill="none" opacity=".5"/></svg>`,
+    milktea: `<svg viewBox="0 0 64 64"><path d="M16 20 h32 l-4 38 h-24 Z" fill="#fff" ${B}/><path d="M18.5 31 h27" ${B} opacity=".45"/><path d="M14 20 h36" ${B}/><path d="M36 20 L44 4" stroke="#E1252B" stroke-width="4" stroke-linecap="round"/><g fill="#13295C"><circle cx="26" cy="50" r="2.6"/><circle cx="33" cy="52" r="2.6"/><circle cx="39" cy="49" r="2.6"/><circle cx="29" cy="45" r="2.6"/></g></svg>`,
+    icecream: `<svg viewBox="0 0 64 64"><path d="M20 30 L32 60 L44 30 Z" fill="#F3E3BF" ${B}/><path d="M24 36 l14 10 M26 42 l10 -7 M28 48 l6 -5" stroke="#1D4EA6" stroke-width="1.6" opacity=".5"/><path d="M17 30 C13 18 23 8 32 9 C41 8 51 18 47 30 Z" fill="#fff" ${B}/><path d="M24 22 q3 -5 8 -5" stroke="#1D4EA6" stroke-width="2" fill="none" opacity=".5"/><circle cx="40" cy="15" r="3" fill="#E1252B"/></svg>`,
+    wedding: `<svg viewBox="0 0 64 64"><rect x="10" y="22" width="44" height="34" rx="4" fill="#E1252B"/><rect x="7" y="16" width="50" height="10" rx="3" fill="#E1252B"/><path d="M32 16 V56" stroke="#fff" stroke-width="3"/><text x="32" y="47" text-anchor="middle" font-size="18" font-family="Noto Sans SC, sans-serif" font-weight="700" fill="#fff">囍</text><path d="M32 16 C24 4 14 8 20 14 M32 16 C40 4 50 8 44 14" fill="none" stroke="#E1252B" stroke-width="3" stroke-linecap="round"/></svg>`,
+    shirt: `<svg viewBox="0 0 64 64"><path d="M22 8 L10 14 L4 28 L13 32 L16 26 V58 H48 V26 L51 32 L60 28 L54 14 L42 8 Q32 16 22 8 Z" fill="#fff" ${B}/><use href="#rabbit-sym" x="18" y="28" width="28" height="20"/></svg>`,
+    plush: `<svg viewBox="0 0 64 64"><use href="#rabbit-sym" x="2" y="12" width="60" height="44"/></svg>`,
+    film: `<svg viewBox="0 0 64 64"><rect x="6" y="14" width="52" height="36" rx="4" fill="#fff" ${B}/><path d="M6 22 h52 M6 42 h52" ${B}/><g fill="#1D4EA6"><rect x="10" y="16" width="5" height="4" rx="1"/><rect x="20" y="16" width="5" height="4" rx="1"/><rect x="30" y="16" width="5" height="4" rx="1"/><rect x="40" y="16" width="5" height="4" rx="1"/><rect x="50" y="16" width="5" height="4" rx="1"/><rect x="10" y="44" width="5" height="4" rx="1"/><rect x="20" y="44" width="5" height="4" rx="1"/><rect x="30" y="44" width="5" height="4" rx="1"/><rect x="40" y="44" width="5" height="4" rx="1"/><rect x="50" y="44" width="5" height="4" rx="1"/></g><path d="M27 26 L39 32 L27 38 Z" fill="#E1252B"/></svg>`,
+    cake: `<svg viewBox="0 0 64 64"><rect x="12" y="30" width="40" height="24" rx="5" fill="#fff" ${B}/><path d="M12 38 q5 5 10 0 t10 0 t10 0 t10 0" fill="none" ${B}/><path d="M32 30 V18" ${B}/><path d="M32 18 q-4 -5 0 -10 q4 5 0 10" fill="#E1252B"/></svg>`,
+    factory: `<svg viewBox="0 0 64 64"><path d="M6 58 V30 L20 38 V30 L34 38 V30 L48 38 V14 h8 V58 Z" fill="#fff" ${B}/><path d="M50 8 q4 -4 8 0 q4 4 0 7" fill="none" stroke="#1D4EA6" stroke-width="2" stroke-linecap="round" opacity=".5"/><g fill="#E1252B"><rect x="12" y="44" width="6" height="6" rx="1"/><rect x="26" y="44" width="6" height="6" rx="1"/><rect x="40" y="44" width="6" height="6" rx="1"/></g></svg>`,
+    award: `<svg viewBox="0 0 64 64"><path d="M22 36 L14 60 L24 55 L28 64 L32 42 Z M42 36 L50 60 L40 55 L36 64 L32 42 Z" fill="#E1252B"/><circle cx="32" cy="26" r="18" fill="#fff" ${B}/><circle cx="32" cy="26" r="11" fill="none" stroke="#E1252B" stroke-width="2.6"/><path d="M27 26 l4 4 l7 -8" fill="none" ${B}/></svg>`,
+    bottle: `<svg viewBox="0 0 64 64"><path d="M24 6 h16 v8 l6 10 v32 a4 4 0 0 1 -4 4 h-20 a4 4 0 0 1 -4 -4 v-32 l6 -10 Z" fill="#fff" ${B}/><path d="M19 34 h26 v22 h-26 Z" fill="#F3EAD4"/><path d="M18 34 h28" ${B}/><circle cx="46" cy="46" r="11" fill="#1D4EA6"/><path d="M41 46 l4 4 l7 -8" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    balloon: `<svg viewBox="0 0 64 64"><use href="#rabbit-sym" x="0" y="8" width="54" height="40"/><path d="M58 8 V56 M54 8 h8 M54 56 h8" stroke="#E1252B" stroke-width="2.4" stroke-linecap="round"/><text x="57" y="36" text-anchor="end" font-size="9" font-family="Figtree, sans-serif" font-weight="700" fill="#E1252B" transform="rotate(-90 57 36)">7 m</text></svg>`,
+    phone: `<svg viewBox="0 0 64 64"><rect x="16" y="4" width="32" height="56" rx="7" fill="#fff" ${B}/><path d="M28 9 h8" ${B}/><path d="M32 46 C22 38 20 30 25 26 C28 24 31 25 32 28 C33 25 36 24 39 26 C44 30 42 38 32 46 Z" fill="#E1252B"/></svg>`,
+    shop: `<svg viewBox="0 0 64 64"><path d="M8 24 L12 10 h40 l4 14" fill="#fff" ${B}/><path d="M8 24 q6 6 12 0 q6 6 12 0 q6 6 12 0 q6 6 12 0" fill="#E1252B" stroke="#1D4EA6" stroke-width="2.6" stroke-linejoin="round"/><path d="M11 30 V58 H53 V30" fill="#fff" ${B}/><rect x="18" y="38" width="12" height="20" fill="#F3EAD4" ${B}/><rect x="36" y="38" width="12" height="10" rx="2" fill="#fff" ${B}/></svg>`,
+    mark: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="#fff" ${B}/><text x="32" y="41" text-anchor="middle" font-size="26" font-family="Figtree, sans-serif" font-weight="700" fill="#E1252B">®</text></svg>`,
+    gift: `<svg viewBox="0 0 64 64"><rect x="10" y="28" width="44" height="30" rx="3" fill="#E1252B"/><rect x="7" y="20" width="50" height="10" rx="2" fill="#E1252B"/><path d="M32 20 V58" stroke="#fff" stroke-width="5"/><path d="M32 20 C24 6 12 10 18 17 C21 20 28 20 32 20 Z M32 20 C40 6 52 10 46 17 C43 20 36 20 32 20 Z" fill="#fff" ${B}/></svg>`,
+    frame: `<svg viewBox="0 0 64 64"><rect x="6" y="8" width="52" height="48" rx="2" fill="#fff" ${B}/><rect x="13" y="15" width="38" height="34" fill="#E1252B"/><use href="#rabbit-sym" x="16" y="20" width="32" height="24"/></svg>`,
+    candy: `<svg viewBox="0 0 170 68"><use href="#candy-sym"/></svg>`,
+    rabbit: `<svg viewBox="0 0 240 170"><use href="#rabbit-sym"/></svg>`,
+    globe: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="24" fill="#fff" ${B}/><path d="M8 32 h48 M32 8 c-12 14 -12 34 0 48 c12 -14 12 -34 0 -48" fill="none" ${B}/><circle cx="44" cy="20" r="4" fill="#E1252B"/></svg>`,
+  };
+})();
+</script>
+
+<script>
+/* ======================================================================
+   The page engine: one requestAnimationFrame loop drives everything, so the
+   motion runs at whatever the screen refreshes at (120 Hz on ProMotion and
+   most recent Android phones). Only transforms, opacity and two canvases
+   change per frame; nothing in the loop reads layout.
+   ====================================================================== */
+(() => {
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const clamp = (v, a, b) => v < a ? a : v > b ? b : v;
+const lerp = (a, b, k) => a + (b - a) * k;
+const sstep = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
+const damp = (cur, target, k, dt) => cur + (target - cur) * (1 - Math.exp(-k * dt));
+const easeOutBack = x => { const c = 1.7; x = clamp(x, 0, 1); return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const DPR = () => Math.min(2, window.devicePixelRatio || 1);
+const C = { blue: "#1D4EA6", ink: "#13295C", red: "#E1252B", milk: "#FBF6E9", pink: "#F6B4C3", paper: "#FFFFFF" };
+
+/* ---------------------------------------------------------------- language */
+let LANG = "en";
+const t = (k, vars) => {
+  let s = (UI[LANG] && UI[LANG][k] != null && UI[LANG][k] !== "") ? UI[LANG][k] : UI.en[k] != null ? UI.en[k] : "";
+  if (vars) for (const [a, b] of Object.entries(vars)) s = s.replace("{" + a + "}", b);
+  return s;
+};
+const pick = o => o ? (o[LANG] != null && o[LANG] !== "" ? o[LANG] : o.en) : "";
+function detectLang() {
+  try { const s = localStorage.getItem("wr-lang"); if (s && UI[s]) return s; } catch (e) {}
+  for (const l of navigator.languages || [navigator.language || "en"]) {
+    const p = String(l).toLowerCase();
+    if (p.startsWith("de")) return "de";
+    if (p.startsWith("zh")) return "zh";
+    if (p.startsWith("en")) return "en";
+  }
+  return "en";
+}
+const langHooks = [];
+function setLang(l, save) {
+  LANG = UI[l] ? l : "en";
+  document.documentElement.lang = LANG === "zh" ? "zh-Hans" : LANG;
+  for (const el of $$("[data-i18n]")) el.innerHTML = t(el.dataset.i18n);
+  for (const el of $$(".ch-head .zh")) {      // the small label shows the other script
+    const alt = LANG === "zh";
+    el.textContent = alt ? el.dataset.en : el.dataset.zh;
+    el.lang = alt ? "en" : "zh-Hans";
+    el.classList.toggle("alt", alt);
+  }
+  for (const b of $$(".langs button")) b.setAttribute("aria-pressed", String(b.dataset.lang === LANG));
+  placePill();
+  if (save) { try { localStorage.setItem("wr-lang", LANG); } catch (e) {} }
+  for (const f of langHooks) f();
+  requestAnimationFrame(measureAll);
+}
+function placePill() {
+  const on = $(`.langs button[data-lang="${LANG}"]`), pill = $("#langPill");
+  if (!on) return;
+  pill.style.width = on.offsetWidth + "px";
+  pill.style.transform = `translateX(${on.offsetLeft}px)`;
+}
+for (const b of $$(".langs button")) b.addEventListener("click", () => setLang(b.dataset.lang, true));
+
+/* ---------------------------------------------------------------- engine */
+const comps = [];
+let VW = innerWidth, VH = innerHeight, SY = scrollY;
+const io = new IntersectionObserver(es => { for (const e of es) { const c = comps.find(c => c.el === e.target); if (c) c.on = e.isIntersecting; } }, { rootMargin: "30% 0px 30% 0px" });
+function comp(el, c) { c.el = el; c.on = false; comps.push(c); io.observe(el); return c; }
+function measureAll() { VW = innerWidth; VH = innerHeight; SY = scrollY; for (const c of comps) c.measure && c.measure(); }
+addEventListener("resize", () => { measureAll(); placePill(); });
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measureAll(); placePill(); });
+new ResizeObserver(() => measureAll()).observe(document.body);
+const docTop = el => { let y = 0; for (let n = el; n; n = n.offsetParent) y += n.offsetTop; return y; };
+
+const fpsN = $("#fpsN");
+let fCount = 0, fT0 = 0, last = 0;
+const progress = $("#progress");
+function frame(now) {
+  const dt = last ? Math.min(.05, (now - last) / 1000) : 1 / 60;
+  last = now;
+  SY = scrollY;
+  const docH = document.documentElement.scrollHeight - VH;
+  progress.style.transform = `scaleX(${docH > 0 ? clamp(SY / docH, 0, 1) : 0})`;
+  for (const c of comps) if (c.on || c.always) c.update(dt, now / 1000);
+  fCount++;
+  if (!fT0) fT0 = now;
+  if (now - fT0 >= 500) { fpsN.textContent = Math.round(fCount * 1000 / (now - fT0)) + " fps"; fCount = 0; fT0 = now; }
+  requestAnimationFrame(frame);
+}
+
+/* ---------------------------------------------------------------- shared drawing */
+function rabbitPath2D() {
+  // the same rabbit as #rabbit-sym, for canvases
+  return {
+    parts: [
+      "M162 52 C142 34 128 10 138 4 C149 -2 168 22 182 48 Z",
+      "M78 118 C62 128 40 136 20 135 C11 135 11 126 20 125 C40 122 58 112 70 101 Z",
+      "M56 104 C46 80 64 56 98 52 C130 48 160 58 174 78 C184 94 174 114 150 120 C120 128 72 128 56 104 Z",
+      "M66 84 A12 12 0 1 0 42 84 A12 12 0 1 0 66 84 Z",
+      "M186 86 C198 94 210 102 222 106 C229 108 229 99 222 97 C211 93 200 85 192 77 Z",
+      "M211 66 A27 23 0 1 0 157 66 A27 23 0 1 0 211 66 Z",
+      "M176 48 C166 24 166 2 178 1 C190 0 194 24 192 48 Z",
+    ].map(d => new Path2D(d)),
+    inner: new Path2D("M180 44 C174 28 174 10 179 9 C185 9 187 27 186 44 Z"),
+  };
+}
+const RAB = rabbitPath2D();
+function drawRabbit(g, x, y, s, color = C.blue, lw = 5) {
+  g.save(); g.translate(x, y); g.scale(s, s); g.translate(-120, -85);
+  g.lineJoin = "round"; g.lineCap = "round"; g.lineWidth = lw; g.strokeStyle = color; g.fillStyle = "#fff";
+  for (const p of RAB.parts) { g.fill(p); g.stroke(p); }
+  g.fillStyle = C.pink; g.fill(RAB.inner);
+  g.fillStyle = C.red; g.beginPath(); g.arc(193, 60, 4.4, 0, 7); g.fill();
+  g.restore();
+}
+
+/* ---------------------------------------------------------------- the printed band */
+function buildBands() {
+  const rab = '<svg viewBox="0 0 240 170" aria-hidden="true"><use href="#rabbit-sym"/></svg>';
+  const unit = `<span>${rab}大白兔<em>WHITE RABBIT</em>奶糖<em>CREAMY CANDY</em></span>`;
+  for (const id of ["band1", "band2", "band3"]) $("#" + id).innerHTML = unit.repeat(8);
+}
+buildBands();
+for (const [id, dir] of [["band1", 1], ["band2", -1], ["band3", 1]]) {
+  const el = $("#" + id);
+  comp(el.parentElement, {
+    x: 0, w: 1,
+    measure() { const s = el.firstElementChild; this.w = s ? s.offsetWidth : 1; },
+    update(dt) {
+      // drifts on its own and leans into the scroll
+      if (!REDUCE) this.x += dt * 26 * dir;
+      const x = ((this.x + SY * .22 * dir) % this.w + this.w) % this.w;
+      el.style.transform = `translate3d(${-x}px,0,0)`;
+    },
+  });
+}
+
+/* ======================================================================
+   HERO: the wrapped candy, drawn on a canvas. The wrapper is a printed
+   cylinder (its print scrolls round as it spins); the twisted ends open,
+   the wrapper parts in two, then the rice-paper film melts away.
+   ====================================================================== */
+const hero = (() => {
+  const el = $("#top"), stage = $(".hero-stage"), cv = $("#candy"), g = cv.getContext("2d");
+  const zh = $$(".hero h1 .zh span"), stepsLi = $$("#steps li"), stepBars = $$("#steps .bar2 i");
+  let W = 0, H = 0, dpr = 1, top = 0, len = 1, p = 0, spin = 0, ptrX = 0, ptrY = 0, ptx = 0, pty = 0, tIntro = 0;
+  let tex = null, texH = 0;
+
+  function buildTex() {
+    // the wrapper print, unrolled: 1024 wide (along the candy) by 512 (round it)
+    const c = document.createElement("canvas"); c.width = 1024; c.height = 1024;
+    const q = c.getContext("2d");
+    q.fillStyle = "#fff"; q.fillRect(0, 0, 1024, 1024);
+    for (let rep = 0; rep < 2; rep++) {
+      const o = rep * 512;
+      q.fillStyle = C.blue;
+      q.fillRect(0, o + 10, 1024, 7); q.fillRect(0, o + 495, 1024, 7);
+      q.fillStyle = C.red; q.fillRect(0, o + 24, 1024, 3); q.fillRect(0, o + 485, 1024, 3);
+      // 大白兔 large, with the rabbit
+      q.font = '400 150px "ZCOOL QingKe HuangYou", "Noto Sans SC", sans-serif';
+      q.textBaseline = "middle"; q.textAlign = "center";
+      q.lineWidth = 10; q.strokeStyle = "#fff"; q.lineJoin = "round";
+      q.fillStyle = C.blue; q.fillText("大白兔", 600, o + 168);
+      drawRabbit(q, 250, o + 160, 1.25, C.blue, 5);
+      // WHITE RABBIT in red, CREAMY CANDY in blue
+      q.font = '800 76px Fraunces, Georgia, serif';
+      q.fillStyle = C.red; q.fillText("WHITE RABBIT", 512, o + 330);
+      q.font = '600 34px Figtree, Arial, sans-serif';
+      q.fillStyle = C.blue;
+      if (q.letterSpacing !== undefined) q.letterSpacing = "10px";
+      q.fillText("CREAMY CANDY · 奶糖", 512, o + 412);
+      if (q.letterSpacing !== undefined) q.letterSpacing = "0px";
+      // little rabbits in the margins
+      for (const x of [70, 954]) drawRabbit(q, x, o + 330, .42, C.blue, 6);
+    }
+    tex = c; texH = 512;
+  }
+
+  function measure() {
+    top = docTop(el); len = Math.max(1, el.offsetHeight - VH);
+    dpr = DPR(); W = stage.clientWidth; H = stage.clientHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+  }
+
+  // half-height of the wrapper end, u = 0 at the sleeve edge .. 1 at the tip
+  const endH = (u, tw) => {
+    const pinch = lerp(1, .16, tw), flare = lerp(1, 1.2, tw);
+    return u < .42 ? lerp(1, pinch, Math.pow(sstep(0, .42, u), .8)) : lerp(pinch, flare, sstep(.42, 1, u));
+  };
+
+  function capsule(L, R) {
+    g.beginPath();
+    g.moveTo(-L / 2 + R * .6, -R); g.lineTo(L / 2 - R * .6, -R);
+    g.bezierCurveTo(L / 2 + R * .2, -R, L / 2 + R * .2, R, L / 2 - R * .6, R);
+    g.lineTo(-L / 2 + R * .6, R);
+    g.bezierCurveTo(-L / 2 - R * .2, R, -L / 2 - R * .2, -R, -L / 2 + R * .6, -R);
+    g.closePath();
+  }
+
+  function drawBody(L, R) {
+    capsule(L, R);
+    const gr = g.createLinearGradient(0, -R, 0, R);
+    gr.addColorStop(0, "#EADCBC"); gr.addColorStop(.16, "#FFFBF1"); gr.addColorStop(.34, "#FFFDF8");
+    gr.addColorStop(.62, "#F8EEDA"); gr.addColorStop(.86, "#E6D3AC"); gr.addColorStop(1, "#D6BF92");
+    g.fillStyle = gr; g.fill();
+    const ge = g.createLinearGradient(-L / 2, 0, L / 2, 0);
+    ge.addColorStop(0, "rgba(160,120,60,.20)"); ge.addColorStop(.1, "rgba(160,120,60,0)"); ge.addColorStop(.9, "rgba(160,120,60,0)"); ge.addColorStop(1, "rgba(160,120,60,.22)");
+    g.fillStyle = ge; g.fill();
+    // glossy streak
+    const sg = g.createLinearGradient(0, -R * .78, 0, -R * .3);
+    sg.addColorStop(0, "rgba(255,255,255,0)"); sg.addColorStop(.45, "rgba(255,255,255,.9)"); sg.addColorStop(1, "rgba(255,255,255,0)");
+    g.fillStyle = sg; g.beginPath(); g.ellipse(0, -R * .54, L * .4, R * .2, 0, 0, Math.PI * 2); g.fill();
+  }
+
+  function wrapperOutline(L, R, E, tw, half) {
+    // one half (half = -1 top, +1 bottom) of the wrapper silhouette
+    const N = 22, pts = [];
+    const xs = L / 2;
+    for (let i = N; i >= 0; i--) { const u = i / N; pts.push([-xs - E * u, half * R * endH(u, tw)]); }
+    for (let i = 0; i <= N; i++) { const u = i / N; pts.push([xs + E * u, half * R * endH(u, tw)]); }
+    g.beginPath();
+    // fringe at the right tip, from the outer corner to the axis
+    const tipR = xs + E, hR = R * endH(1, tw);
+    pts.forEach(([x, y], i) => i ? g.lineTo(x, y) : g.moveTo(x, y));
+    const teeth = 5;
+    for (let k = 1; k <= teeth; k++) { const f = k / teeth; g.lineTo(tipR + (k % 2 ? E * .07 * tw : 0), half * hR * (1 - f)); }
+    g.lineTo(tipR, half * .6); g.lineTo(-tipR, half * .6);
+    for (let k = teeth; k >= 1; k--) { const f = k / teeth; g.lineTo(-tipR - (k % 2 ? E * .07 * tw : 0), half * hR * f); }
+    g.closePath();
+  }
+
+  function drawWrapperHalf(L, R, E, tw, half, spinA) {
+    g.save();
+    wrapperOutline(L, R, E, tw, half);
+    g.fillStyle = "#fff"; g.fill();
+    g.save(); g.clip();
+    // the print on the sleeve, mapped round the cylinder
+    const slices = 34, xs = L / 2;
+    for (let k = 0; k < slices; k++) {
+      const a0 = half < 0 ? -Math.PI / 2 + (k / slices) * Math.PI / 2 : (k / slices) * Math.PI / 2;
+      const a1 = a0 + (Math.PI / 2) / slices;
+      const y0 = R * Math.sin(a0), y1 = R * Math.sin(a1);
+      let v = ((a0 + spinA) / (2 * Math.PI)) % 1; if (v < 0) v += 1;
+      const sv = v * texH, sh = Math.max(.5, ((a1 - a0) / (2 * Math.PI)) * texH);
+      g.drawImage(tex, 0, sv, 1024, sh, -xs, y0, L, y1 - y0 + .6);
+    }
+    // cylinder shading over sleeve and ends
+    const sh = g.createLinearGradient(0, -R * 1.2, 0, R * 1.2);
+    sh.addColorStop(0, "rgba(19,41,92,.30)"); sh.addColorStop(.12, "rgba(19,41,92,.10)"); sh.addColorStop(.3, "rgba(255,255,255,.35)");
+    sh.addColorStop(.42, "rgba(255,255,255,0)"); sh.addColorStop(.72, "rgba(19,41,92,.06)"); sh.addColorStop(.9, "rgba(19,41,92,.2)"); sh.addColorStop(1, "rgba(19,41,92,.34)");
+    g.fillStyle = sh; g.fillRect(-xs - E * 1.2, -R * 1.3, L + E * 2.4, R * 2.6);
+    // pleats on the twisted ends
+    if (tw > .02) {
+      for (const side of [-1, 1]) {
+        const px = side * (xs + E * .42);
+        for (let k = 0; k < 9; k++) {
+          const f = (k + .5) / 9, ang = (f - .5) * 1.1 + Math.sin(spinA * 1.3 + k) * .08 * tw;
+          g.beginPath(); g.moveTo(px, 0);
+          const ex = side * (xs + E), ey = half * R * endH(1, tw) * f;
+          g.quadraticCurveTo(px + side * E * .3, ey * .4 + ang * R * .2, ex, ey);
+          g.strokeStyle = `rgba(19,41,92,${(.10 + (k % 2) * .08) * tw})`; g.lineWidth = Math.max(1, R * .03); g.stroke();
+          g.beginPath(); g.moveTo(px, 0);
+          g.quadraticCurveTo(px - side * E * .2, ey * .5, side * xs, half * R * f);
+          g.strokeStyle = `rgba(19,41,92,${(.06 + (k % 2) * .06) * tw})`; g.stroke();
+        }
+      }
+    }
+    g.restore();
+    wrapperOutline(L, R, E, tw, half);
+    g.strokeStyle = "rgba(29,78,166,.28)"; g.lineWidth = Math.max(1, R * .025); g.stroke();
+    g.restore();
+  }
+
+  function drawFilm(L, R, film, now) {
+    if (film <= .01) return;
+    g.save();
+    capsule(L * 1.02, R * 1.06);
+    g.fillStyle = `rgba(255,255,255,${.42 * film})`; g.fill();
+    g.clip();
+    // fine crinkles of rice paper
+    g.strokeStyle = `rgba(150,170,200,${.16 * film})`; g.lineWidth = 1;
+    for (let i = -8; i <= 8; i++) { g.beginPath(); const x = i * L / 14; g.moveTo(x - R, -R); g.bezierCurveTo(x - R * .2, -R * .3, x + R * .3, R * .2, x + R * .6, R); g.stroke(); }
+    // a sheen that sweeps across as it melts
+    const s = lerp(-L * .8, L * .8, 1 - film);
+    const sg = g.createLinearGradient(s - R * 1.2, 0, s + R * 1.2, 0);
+    sg.addColorStop(0, "rgba(255,255,255,0)"); sg.addColorStop(.5, `rgba(255,255,255,${.75 * film})`); sg.addColorStop(1, "rgba(255,255,255,0)");
+    g.fillStyle = sg; g.fillRect(-L, -R * 1.2, L * 2, R * 2.4);
+    g.restore();
+  }
+
+  function draw(now) {
+    const W2 = W * dpr, H2 = H * dpr;
+    g.setTransform(1, 0, 0, 1, 0, 0);
+    g.clearRect(0, 0, W2, H2);
+    g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const land = W > H * 1.05 && W >= 860;
+    const cx = land ? W * .66 : W * .5, cy = land ? H * .54 : H * .63;
+    const span = land ? Math.min(W * .52, H * 1.1) : Math.min(W * .94, H * .62);
+    const L = span / 1.75, R = L * .19;
+
+    // timeline of the unwrapping, from the scroll
+    const tw = 1 - sstep(.06, .34, p);
+    const open = sstep(.34, .64, p);
+    const film = 1 - sstep(.66, .9, p);
+    const E = L * lerp(.14, .32, tw);
+    const intro = REDUCE ? 1 : easeOutBack(tIntro / 1.1);
+    const bob = REDUCE ? 0 : Math.sin(now * 1.5) * R * .1;
+    const sc = lerp(.6, 1, intro) * lerp(1, 1.1, open);
+
+    // the milk-coloured disc behind, and the shadow on the paper
+    g.save();
+    g.translate(cx, cy);
+    const disc = g.createRadialGradient(0, 0, span * .05, 0, 0, span * .62);
+    disc.addColorStop(0, "rgba(251,246,233,1)"); disc.addColorStop(.7, "rgba(251,246,233,.85)"); disc.addColorStop(1, "rgba(251,246,233,0)");
+    g.fillStyle = disc; g.beginPath(); g.arc(0, 0, span * .62, 0, Math.PI * 2); g.fill();
+    const shy = R * 2.4;
+    const sg = g.createRadialGradient(0, shy, 0, 0, shy, L * .8);
+    sg.addColorStop(0, `rgba(19,41,92,${.16 - bob / R * .03})`); sg.addColorStop(1, "rgba(19,41,92,0)");
+    g.fillStyle = sg; g.save(); g.scale(1, .18); g.beginPath(); g.arc(0, shy / .18, L * .8, 0, Math.PI * 2); g.fill(); g.restore();
+    g.restore();
+
+    g.save();
+    g.translate(cx + ptx * 10, cy + bob + pty * 6);
+    g.rotate(-.13 + ptx * .05 + (1 - intro) * -.5);
+    g.scale(sc, sc);
+    drawBody(L, R);
+    drawFilm(L, R, film, now);
+    for (const half of [-1, 1]) {
+      if (open >= .999) continue;
+      g.save();
+      const o = open, fold = Math.cos(Math.min(1, o * 1.15) * Math.PI * .5);
+      g.translate(half * -o * L * .1, half * (o * R * 4.2 + (1 - fold) * R * .9));
+      g.rotate(half * o * .38);
+      g.scale(1, Math.max(.06, fold));     // the flap folds back on its seam
+      g.globalAlpha = 1 - sstep(.6, 1, o);
+      drawWrapperHalf(L * 1.05, R * 1.08, E, tw, half, spin);
+      g.restore();
+    }
+    // sparkles as the rice paper melts
+    if (film > .01 && film < .99) {
+      for (let i = 0; i < 14; i++) {
+        const a = i * 2.39996, r = R * (1.1 + (i % 5) * .25), life = (1 - film);
+        const x = Math.cos(a) * L * .45 * (i % 3 + 1) / 3, y = Math.sin(a) * r - life * R * 1.5;
+        g.globalAlpha = Math.sin(life * Math.PI) * .9;
+        g.fillStyle = i % 4 ? "#fff" : C.pink;
+        g.beginPath(); g.arc(x, y, R * .05 * (1 + i % 3), 0, Math.PI * 2); g.fill();
+      }
+      g.globalAlpha = 1;
+    }
+    g.restore();
+  }
+
+  stage.addEventListener("pointermove", e => { const r = stage.getBoundingClientRect(); ptrX = (e.clientX - r.left) / r.width * 2 - 1; ptrY = (e.clientY - r.top) / r.height * 2 - 1; });
+  stage.addEventListener("pointerleave", () => { ptrX = ptrY = 0; });
+
+  return comp(el, {
+    always: false,
+    measure,
+    update(dt, now) {
+      if (!tex) return;
+      tIntro += dt;
+      const raw = clamp((SY - top) / len, 0, 1);
+      p = REDUCE ? raw : damp(p, raw, 10, dt);
+      const opening = sstep(.04, .36, p) - sstep(.3, .4, p);
+      spin += dt * (REDUCE ? 0 : .5 + opening * 9);
+      ptx = damp(ptx, ptrX, 4, dt); pty = damp(pty, ptrY, 4, dt);
+      draw(now);
+      // the three steps under the candy
+      const seg = [[0, .34], [.34, .64], [.64, .92]];
+      seg.forEach(([a, b], i) => {
+        const k = clamp((p - a) / (b - a), 0, 1);
+        stepBars[i].style.transform = `scaleX(${k.toFixed(4)})`;
+        stepsLi[i].classList.toggle("on", p >= a - .001 && (i === 2 || p < b));
+      });
+      // 大白兔 springs in on load
+      zh.forEach((s, i) => { const k = REDUCE ? 1 : easeOutBack((tIntro - .08 * i) / .7); s.style.transform = `translate3d(0, ${((1 - k) * 60).toFixed(2)}%, 0) rotate(${((1 - k) * (i - 1) * 8).toFixed(2)}deg)`; });
+    },
+    init() { buildTex(); },
+  });
+})();
+
+/* ======================================================================
+   WHAT IT IS: seven candies make one glass of milk (the old slogan).
+   ====================================================================== */
+const glass = (() => {
+  const box = $("#glassBox"), tray = $("#tray"), milk = $("#milk"), line = $("#milkLine"), sunk = $("#sunk"), read = $("#glassRead"), svg = $("#glassBox svg.glass");
+  const Y0 = 284, Y1 = 64;    // milk level for 0 and 7 candies
+  let n = 0, level = 0, vel = 0, slosh = 0;
+  const ticks = $("#ticks");
+  for (let i = 1; i <= 7; i++) { const y = lerp(Y0, Y1, i / 7); ticks.insertAdjacentHTML("beforeend", `<path d="M${lerp(60, 47, (Y0 - y) / (Y0 - 42)) + 4} ${y.toFixed(1)} h10"/>`); }
+  const candySvg = band => `<svg viewBox="0 0 170 68" aria-hidden="true" style="--band:${band}"><use href="#candy-sym"/></svg>`;
+  function fillTray() {
+    tray.innerHTML = "";
+    for (let i = 0; i < 7; i++) {
+      const b = document.createElement("button");
+      b.type = "button"; b.id = "candy-" + i; b.innerHTML = candySvg(C.red);
+      b.setAttribute("aria-label", t("glass.tap") + " " + (i + 1));
+      b.addEventListener("click", () => drop(b));
+      tray.appendChild(b);
+    }
+  }
+  function label() {
+    read.innerHTML = n >= 7 ? `${t("glass.full")}<small>${t("glass.read", { n: 7 })}</small>` : `${t("glass.read", { n })}<small>${t("glass.tap")}</small>`;
+  }
+  function drop(btn) {
+    if (btn.disabled || n >= 7) return;
+    btn.disabled = true;
+    const from = btn.getBoundingClientRect(), to = svg.getBoundingClientRect();
+    const fl = document.createElement("div"); fl.className = "flyer"; fl.innerHTML = candySvg(C.red);
+    document.body.appendChild(fl);
+    const x0 = from.left, y0 = from.top, x1 = to.left + to.width * .5 - 32, y1 = to.top + to.height * ((lerp(Y0, Y1, n / 7) - 10) / 300);
+    const T = REDUCE ? .01 : .62, peak = Math.min(y0, y1) - 90;
+    const t0 = performance.now();
+    const step = now => {
+      const k = clamp((now - t0) / 1000 / T, 0, 1);
+      const x = lerp(x0, x1, k), y = (1 - k) * (1 - k) * y0 + 2 * (1 - k) * k * peak + k * k * y1;
+      fl.style.transform = `translate3d(${x}px,${y}px,0) rotate(${k * 300}deg) scale(${lerp(1, .7, k)})`;
+      if (k < 1) requestAnimationFrame(step);
+      else { fl.remove(); n++; vel += 2.4; slosh = 1; sinkOne(); label(); }
+    };
+    requestAnimationFrame(step);
+  }
+  function sinkOne() {
+    const x = 70 + (n * 37) % 70, y = 268 - (n % 3) * 9;
+    sunk.insertAdjacentHTML("beforeend", `<g transform="translate(${x} ${y}) rotate(${(n * 47) % 60 - 30}) scale(.32)" opacity=".55"><use href="#candy-sym" x="-85" y="-34" style="--band:${C.red}"/></g>`);
+  }
+  $("#pourAll").addEventListener("click", () => { $$("#tray button").filter(b => !b.disabled).forEach((b, i) => setTimeout(() => drop(b), i * (REDUCE ? 0 : 120))); });
+  $("#pourReset").addEventListener("click", () => { n = 0; sunk.innerHTML = ""; fillTray(); label(); slosh = 1; });
+  langHooks.push(() => { label(); $$("#tray button").forEach((b, i) => b.setAttribute("aria-label", t("glass.tap") + " " + (i + 1))); });
+  fillTray();
+  return comp(box, {
+    update(dt, now) {
+      // the level follows a spring, the surface sloshes and settles
+      const target = n / 7;
+      const acc = (target - level) * 60 - vel * 9;
+      vel += acc * dt; level += vel * dt;
+      slosh = damp(slosh, 0, 1.4, dt);
+      const y = lerp(Y0, Y1, clamp(level, 0, 1.02));
+      const amp = 1.2 + slosh * 7, ph = REDUCE ? 0 : now * 3.2;
+      let d = `M30 ${y.toFixed(2)}`, l = "";
+      for (let x = 30; x <= 190; x += 8) {
+        const yy = y + Math.sin(x * .06 + ph) * amp * .6 + Math.sin(x * .023 - ph * .7) * amp;
+        d += ` L${x} ${yy.toFixed(2)}`; l += (l ? " L" : "M") + `${x} ${yy.toFixed(2)}`;
+      }
+      milk.setAttribute("d", d + " L190 300 L30 300 Z");
+      line.setAttribute("d", l);
+    },
+    measure() {},
+  });
+})();
+
+/* ======================================================================
+   HISTORY: a horizontal track pinned while you scroll; the rabbit hops
+   along the ground from year to year.
+   ====================================================================== */
+const history = (() => {
+  const pin = $("#hPin"), track = $("#track"), ground = $("#ground"), hop = $("#hop"), body = $("#hopBody");
+  let top = 0, travel = 1, x = 0, p = 0, dots = [], dotEls = [], phase = 0, speed = 0, earL = 0, earV = 0, lastRx = 0;
+  function render() {
+    track.innerHTML = DATA.timeline.map(it => `<article class="card"><div class="art">${ICONS[it.icon] || ""}</div><div class="yr">${it.year}</div><h3>${pick(it.t)}</h3><p>${pick(it.d)}</p></article>`).join("");
+    ground.querySelectorAll(".dot").forEach(d => d.remove());
+    DATA.timeline.forEach(() => ground.insertAdjacentHTML("beforeend", '<span class="dot"></span>'));
+    dotEls = $$(".dot", ground);
+    measure();
+  }
+  function measure() {
+    const tw = track.scrollWidth;
+    travel = Math.max(0, tw - VW);
+    pin.style.height = (travel + VH) + "px";
+    top = docTop(pin);
+    const cards = $$(".card", track);
+    dots = cards.map(c => c.offsetLeft + 36);
+    dotEls.forEach((d, i) => { d.style.left = dots[i] + "px"; });
+  }
+  langHooks.push(render);
+  return comp(pin, {
+    measure, render,
+    update(dt, now) {
+      const raw = clamp((SY - top) / Math.max(1, travel), 0, 1);
+      p = REDUCE ? raw : damp(p, raw, 9, dt);
+      x = p * travel;
+      track.style.transform = `translate3d(${-x}px,0,0)`;
+      for (const d of dotEls) d.style.transform = `translate3d(${-x}px,0,0)`;
+      // the rabbit sits at 30% of the screen; it hops while the track moves under it
+      const rx = x + VW * .3;
+      const v = (rx - lastRx) / Math.max(dt, 1e-3); lastRx = rx;
+      speed = damp(speed, Math.min(1, Math.abs(v) / 260), 8, dt);
+      phase += Math.abs(v) * dt / 150;
+      const air = Math.abs(Math.sin(phase * Math.PI));
+      const h = air * 46 * speed;
+      const squash = 1 - (1 - air) * .14 * speed, stretch = 1 + air * .08 * speed;
+      const dir = v < -2 ? -1 : 1;
+      earV += ((-air * 14 * speed + Math.sin(now * 2.1) * (1 - speed) * 2) - earL) * 60 * dt; earV *= Math.exp(-8 * dt); earL += earV * dt;
+      hop.style.transform = `translate3d(${VW * .3 - 60}px, ${-h}px, 0) scale(${dir * stretch}, ${squash})`;
+      body.setAttribute("transform", `rotate(${(-Math.cos(phase * Math.PI) * 10 * speed).toFixed(2)} 120 110)`);
+    },
+  });
+})();
+
+/* ======================================================================
+   1972: the gift box opens as you scroll past; candies spill out in a fan.
+   ====================================================================== */
+const gift = (() => {
+  const box = $("#giftBox"), lid = $("#giftLid"), cg = $("#giftCandies");
+  const bands = [C.red, C.blue, C.red, C.blue, C.red, C.blue, C.red];
+  cg.innerHTML = bands.map((b, i) => `<g class="gc" data-i="${i}"><use href="#candy-sym" x="-42" y="-17" width="84" height="34" style="--band:${b}"/></g>`).join("");
+  const gcs = $$(".gc", cg);
+  let top = 0, h = 1, p = 0;
+  return comp(box, {
+    measure() { top = docTop(box); h = box.offsetHeight; },
+    update(dt, now) {
+      const raw = clamp((SY + VH * .85 - top) / (VH * .8), 0, 1);
+      p = REDUCE ? 1 : damp(p, raw, 7, dt);
+      const lidK = sstep(.1, .55, p);
+      lid.setAttribute("transform", `translate(${(lidK * 60).toFixed(2)} ${(-lidK * 110).toFixed(2)}) rotate(${(lidK * 18).toFixed(2)} 210 186)`);
+      gcs.forEach((el, i) => {
+        const k = sstep(.35 + i * .06, .75 + i * .04, p);
+        const a = (-70 + i * (140 / (gcs.length - 1))) * Math.PI / 180;
+        const r = 120 + (i % 2) * 34;
+        const x = 210 + Math.sin(a) * r * k, y = 230 - Math.cos(a) * r * k * 1.1 - Math.sin(k * Math.PI) * 30;
+        const bobY = REDUCE ? 0 : Math.sin(now * 1.6 + i) * 3 * k;
+        el.setAttribute("transform", `translate(${x.toFixed(2)} ${(y + bobY).toFixed(2)}) rotate(${(a * 57.3 * k + (1 - k) * 90).toFixed(2)}) scale(${lerp(.5, 1, k).toFixed(3)})`);
+        el.setAttribute("opacity", k < .02 ? 0 : 1);
+      });
+    },
+  });
+})();
+
+/* ======================================================================
+   KINDS: a ring of wrapped candies you can spin; the one in front is named.
+   ====================================================================== */
+const ring = (() => {
+  const el = $("#ring"), name = $("#ringName"), note = $("#ringNote");
+  let items = [], rot = 0, vel = 0, drag = null, front = -1, target = null, R = 220;
+  function render() {
+    el.innerHTML = DATA.kinds.map((k, i) => `<div class="it" data-i="${i}"><svg viewBox="0 0 170 68" style="--band:${k.band};--end:${k.end || "#fff"}"><use href="#candy-sym"/></svg></div>`).join("");
+    items = $$(".it", el);
+    front = -1;
+    measure();
+  }
+  function measure() { R = Math.min(440, Math.max(110, el.clientWidth * .42)); }
+  const step = () => (Math.PI * 2) / Math.max(1, items.length);
+  el.addEventListener("pointerdown", e => { drag = { x: e.clientX, r: rot, t: performance.now() }; target = null; el.setPointerCapture(e.pointerId); });
+  el.addEventListener("pointermove", e => { if (!drag) return; const nr = drag.r + (e.clientX - drag.x) / R; const now = performance.now(); vel = (nr - rot) / Math.max(1e-3, (now - drag.t) / 1000); drag.t = now; rot = nr; });
+  const up = () => { if (!drag) return; drag = null; target = Math.round(rot / step()) * step() + (vel > 0 ? 1 : -1) * Math.round(Math.min(3, Math.abs(vel) / 6)) * step(); };
+  el.addEventListener("pointerup", up); el.addEventListener("pointercancel", up);
+  $("#ringPrev").addEventListener("click", () => { target = (Math.round(rot / step()) + 1) * step(); });
+  $("#ringNext").addEventListener("click", () => { target = (Math.round(rot / step()) - 1) * step(); });
+  langHooks.push(() => { front = -1; });
+  return comp(el, {
+    render, measure,
+    update(dt, now) {
+      if (!items.length) return;
+      if (!drag) {
+        if (target != null) { rot = damp(rot, target, 7, dt); if (Math.abs(rot - target) < 1e-4) target = null; vel = 0; }
+        else if (!REDUCE) { rot += dt * -.18; }
+      }
+      const n = items.length;
+      let best = -1, bz = -9;
+      items.forEach((it, i) => {
+        const a = i * step() + rot;
+        const x = Math.sin(a) * R, z = Math.cos(a);
+        // a tilted ring: the back row sits higher, smaller and paler, so the front reads clearly
+        const s = lerp(.42, 1.2, Math.pow((z + 1) / 2, 1.3));
+        const y = -z * R * .3 + (REDUCE ? 0 : Math.sin(now * 1.3 + i) * 4);
+        it.style.transform = `translate3d(${x.toFixed(2)}px, ${y.toFixed(2)}px, 0) rotate(${(Math.sin(a) * -14).toFixed(2)}deg) scale(${s.toFixed(3)})`;
+        it.style.opacity = lerp(.18, 1, Math.pow((z + 1) / 2, 1.6)).toFixed(3);
+        it.style.zIndex = String(Math.round(z * 100) + 100);
+        if (z > bz) { bz = z; best = i; }
+      });
+      if (best !== front) {
+        front = best;
+        const k = DATA.kinds[best];
+        name.textContent = pick(k.name);
+        note.textContent = pick(k.note) || "";
+      }
+    },
+  });
+})();
+
+/* ======================================================================
+   POP CULTURE: cards that tilt toward the pointer.
+   ====================================================================== */
+const pops = (() => {
+  const el = $("#pops");
+  function render() {
+    el.innerHTML = DATA.pops.map(p => `<article class="pop"><div class="ic">${ICONS[p.icon] || ""}</div><span class="when">${p.when}</span><h3>${pick(p.t)}</h3><p>${pick(p.d)}</p></article>`).join("");
+    for (const c of $$(".pop", el)) {
+      c.addEventListener("pointermove", e => { if (e.pointerType !== "mouse") return; const r = c.getBoundingClientRect(); c._tx = ((e.clientY - r.top) / r.height - .5) * -8; c._ty = ((e.clientX - r.left) / r.width - .5) * 10; });
+      c.addEventListener("pointerleave", () => { c._tx = 0; c._ty = 0; });
+      c._x = c._y = c._tx = c._ty = 0;
+    }
+  }
+  langHooks.push(render);
+  return comp(el, {
+    render, measure() {},
+    update(dt) {
+      for (const c of el.children) {
+        c._x = damp(c._x, c._tx, 10, dt); c._y = damp(c._y, c._ty, 10, dt);
+        c.style.transform = Math.abs(c._x) + Math.abs(c._y) > .01 ? `rotateX(${c._x.toFixed(2)}deg) rotateY(${c._y.toFixed(2)}deg)` : "";
+      }
+    },
+  });
+})();
+
+/* ======================================================================
+   FUN FACTS: a glass jar of candies with a little physics. Each candy is
+   a capsule (two points kept a fixed distance apart); tap one to pop it
+   out and read a fact.
+   ====================================================================== */
+const jar = (() => {
+  const box = $("#jarBox"), cv = $("#jar"), g = cv.getContext("2d");
+  const factN = $("#factN"), factText = $("#factText"), card = $("#factCard");
+  let W = 0, H = 0, dpr = 1, J = null, candies = [], fi = 0, flip = 0, shown = 0;
+  const N = 20;
+  function geom() {
+    const w = Math.min(W * .78, H * .7), h = Math.min(H * .78, w * 1.25);
+    const x0 = (W - w) / 2, y1 = H - 16, y0 = y1 - h;
+    return { x0, x1: x0 + w, y0, y1, r: w * .14, neck: w * .74, cr: Math.max(9, w * .045) };
+  }
+  function makeCandy(i, seed) {
+    const r = J.cr, len = r * 2.6;
+    const x = lerp(J.x0 + r * 2, J.x1 - r * 2, ((i * 0.618034 + seed) % 1));
+    const y = J.y0 - r * 2 - (i % 7) * r * 2.4 - Math.floor(i / 7) * r * 3;
+    const a = (i * 1.7) % Math.PI;
+    const c = { r, len, band: [C.red, C.blue, "#E8A23A", "#3E8E5E", "#8A4B2A"][i % 5], pop: 0 };
+    c.p = [[x - Math.cos(a) * len / 2, y - Math.sin(a) * len / 2], [x + Math.cos(a) * len / 2, y + Math.sin(a) * len / 2]];
+    c.o = c.p.map(q => q.slice());
+    return c;
+  }
+  function reset() { candies = []; for (let i = 0; i < N; i++) candies.push(makeCandy(i, .13)); for (let s = 0; s < 480; s++) sim(1 / 120); }
+  function measure() {
+    dpr = DPR(); W = box.clientWidth; H = box.clientHeight;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    const nj = geom();
+    if (!J || Math.abs(nj.cr - J.cr) > .5 || Math.abs(nj.x0 - J.x0) > 1) { J = nj; reset(); } else J = nj;
+  }
+  function wall(q, r) {
+    // keep a point inside the jar: straight sides, rounded bottom corners, open top
+    const { x0, x1, y1, r: cr } = J;
+    if (q[1] > y1 - cr) {
+      for (const cx of [x0 + cr, x1 - cr]) {
+        const inCorner = cx < (x0 + x1) / 2 ? q[0] < cx : q[0] > cx;
+        if (inCorner) { const dx = q[0] - cx, dy = q[1] - (y1 - cr), d = Math.hypot(dx, dy), lim = cr - r; if (d > lim) { q[0] = cx + dx / d * lim; q[1] = (y1 - cr) + dy / d * lim; } }
+      }
+    }
+    if (q[0] < x0 + r) q[0] = x0 + r;
+    if (q[0] > x1 - r) q[0] = x1 - r;
+    if (q[1] > y1 - r) q[1] = y1 - r;
+  }
+  function closest(a0, a1, b0, b1) {
+    // closest points between segments a and b (parameters s, t)
+    const d1 = [a1[0] - a0[0], a1[1] - a0[1]], d2 = [b1[0] - b0[0], b1[1] - b0[1]], r = [a0[0] - b0[0], a0[1] - b0[1]];
+    const aa = d1[0] * d1[0] + d1[1] * d1[1], e = d2[0] * d2[0] + d2[1] * d2[1], f = d2[0] * r[0] + d2[1] * r[1];
+    const c = d1[0] * r[0] + d1[1] * r[1], b = d1[0] * d2[0] + d1[1] * d2[1], den = aa * e - b * b;
+    let s = den > 1e-9 ? clamp((b * f - c * e) / den, 0, 1) : 0;
+    let tt = (b * s + f) / e;
+    if (tt < 0) { tt = 0; s = clamp(-c / aa, 0, 1); } else if (tt > 1) { tt = 1; s = clamp((b - c) / aa, 0, 1); }
+    return [s, tt];
+  }
+  function sim(dt) {
+    const gy = 2200;
+    for (const c of candies) {
+      for (let k = 0; k < 2; k++) {
+        const q = c.p[k], o = c.o[k];
+        const vx = (q[0] - o[0]) * .995, vy = (q[1] - o[1]) * .995;
+        o[0] = q[0]; o[1] = q[1];
+        q[0] += vx; q[1] += vy + gy * dt * dt;
+      }
+    }
+    for (let it = 0; it < 4; it++) {
+      for (const c of candies) {
+        // keep the capsule's length
+        const [a, b] = c.p, dx = b[0] - a[0], dy = b[1] - a[1], d = Math.hypot(dx, dy) || 1, k = (d - c.len) / d / 2;
+        a[0] += dx * k; a[1] += dy * k; b[0] -= dx * k; b[1] -= dy * k;
+      }
+      for (let i = 0; i < candies.length; i++) for (let j = i + 1; j < candies.length; j++) {
+        const A = candies[i], B = candies[j];
+        if (A.pop || B.pop) continue;
+        const [s, tt] = closest(A.p[0], A.p[1], B.p[0], B.p[1]);
+        const pa = [lerp(A.p[0][0], A.p[1][0], s), lerp(A.p[0][1], A.p[1][1], s)], pb = [lerp(B.p[0][0], B.p[1][0], tt), lerp(B.p[0][1], B.p[1][1], tt)];
+        const dx = pb[0] - pa[0], dy = pb[1] - pa[1], d = Math.hypot(dx, dy), min = A.r + B.r;
+        if (d < min && d > 1e-6) {
+          const push = (min - d) / d * .5, px = dx * push, py = dy * push;
+          A.p[0][0] -= px * (1 - s); A.p[0][1] -= py * (1 - s); A.p[1][0] -= px * s; A.p[1][1] -= py * s;
+          B.p[0][0] += px * (1 - tt); B.p[0][1] += py * (1 - tt); B.p[1][0] += px * tt; B.p[1][1] += py * tt;
+        }
+      }
+      for (const c of candies) if (!c.pop) { wall(c.p[0], c.r); wall(c.p[1], c.r); }
+    }
+  }
+  function drawCandy(c) {
+    const [a, b] = c.p, cx = (a[0] + b[0]) / 2, cy = (a[1] + b[1]) / 2, ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+    const L = c.len + c.r * .4, R = c.r;
+    g.save(); g.translate(cx, cy); g.rotate(ang);
+    if (c.pop) g.globalAlpha = 1 - sstep(.5, 1, c.pop);
+    // twisted ends
+    g.fillStyle = "#fff"; g.strokeStyle = C.blue; g.lineWidth = 1.4; g.lineJoin = "round";
+    for (const s of [-1, 1]) {
+      g.beginPath(); g.moveTo(s * L / 2, -R * .55); g.lineTo(s * (L / 2 + R * .5), -R * .1); g.lineTo(s * (L / 2 + R * 1.1), -R * .9); g.lineTo(s * (L / 2 + R * .95), 0); g.lineTo(s * (L / 2 + R * 1.1), R * .9); g.lineTo(s * (L / 2 + R * .5), R * .1); g.lineTo(s * L / 2, R * .55); g.closePath(); g.fill(); g.stroke();
+    }
+    g.beginPath(); g.roundRect ? g.roundRect(-L / 2, -R, L, R * 2, R * .8) : g.rect(-L / 2, -R, L, R * 2);
+    g.fillStyle = "#fff"; g.fill();
+    g.fillStyle = c.band; g.fillRect(-L / 2 + 1, -R * .28, L - 2, R * .56);
+    const sh = g.createLinearGradient(0, -R, 0, R); sh.addColorStop(0, "rgba(19,41,92,.18)"); sh.addColorStop(.35, "rgba(255,255,255,0)"); sh.addColorStop(1, "rgba(19,41,92,.22)");
+    g.fillStyle = sh; g.fill();
+    g.strokeStyle = C.blue; g.lineWidth = 1.6; g.stroke();
+    g.restore();
+  }
+  function draw(now) {
+    g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, cv.width, cv.height); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const { x0, x1, y0, y1, r } = J;
+    // jar back
+    g.fillStyle = "rgba(29,78,166,.05)";
+    g.beginPath(); g.moveTo(x0, y0 + 10); g.lineTo(x0, y1 - r); g.quadraticCurveTo(x0, y1, x0 + r, y1); g.lineTo(x1 - r, y1); g.quadraticCurveTo(x1, y1, x1, y1 - r); g.lineTo(x1, y0 + 10); g.closePath(); g.fill();
+    for (const c of candies) drawCandy(c);
+    // glass front: outline and highlights
+    g.lineWidth = 3.5; g.strokeStyle = C.blue; g.lineJoin = "round"; g.lineCap = "round";
+    g.beginPath(); g.moveTo(x0 - 8, y0); g.quadraticCurveTo(x0, y0, x0, y0 + 14); g.lineTo(x0, y1 - r); g.quadraticCurveTo(x0, y1, x0 + r, y1); g.lineTo(x1 - r, y1); g.quadraticCurveTo(x1, y1, x1, y1 - r); g.lineTo(x1, y0 + 14); g.quadraticCurveTo(x1, y0, x1 + 8, y0); g.stroke();
+    g.strokeStyle = "rgba(255,255,255,.85)"; g.lineWidth = 8;
+    g.beginPath(); g.moveTo(x0 + 16, y0 + 40); g.lineTo(x0 + 16, y1 - r - 10); g.stroke();
+    g.strokeStyle = "rgba(255,255,255,.6)"; g.lineWidth = 4;
+    g.beginPath(); g.moveTo(x0 + 30, y0 + 40); g.lineTo(x0 + 30, y0 + 120); g.stroke();
+    // the lid, set aside on its rim
+    const lw = (x1 - x0) * .86, lx = (x0 + x1) / 2 + (x1 - x0) * .1, ly = y0 - 34 + (REDUCE ? 0 : Math.sin(now * 1.2) * 3);
+    g.fillStyle = "rgba(19,41,92,.07)"; g.beginPath(); g.ellipse((x0 + x1) / 2, y0 + 4, (x1 - x0) * .5, 6, 0, 0, Math.PI * 2); g.fill();
+    g.save(); g.translate(lx, ly); g.rotate(.2);
+    g.fillStyle = C.red; g.beginPath(); g.roundRect ? g.roundRect(-lw / 2, -14, lw, 24, 8) : g.rect(-lw / 2, -14, lw, 24); g.fill();
+    g.fillStyle = "rgba(255,255,255,.25)"; g.fillRect(-lw / 2 + 10, -10, lw - 20, 4);
+    g.fillStyle = C.red; g.beginPath(); g.arc(0, -18, 10, 0, Math.PI * 2); g.fill();
+    g.restore();
+    // a paper label with the rabbit
+    const lyy = lerp(y0, y1, .58), lw2 = (x1 - x0) * .5;
+    g.fillStyle = "rgba(255,255,255,.92)"; g.strokeStyle = "rgba(29,78,166,.5)"; g.lineWidth = 1.5;
+    g.beginPath(); g.roundRect ? g.roundRect((x0 + x1) / 2 - lw2 / 2, lyy - 26, lw2, 52, 10) : g.rect((x0 + x1) / 2 - lw2 / 2, lyy - 26, lw2, 52); g.fill(); g.stroke();
+    drawRabbit(g, (x0 + x1) / 2 - lw2 * .22, lyy + 2, .2, C.blue, 9);
+    g.fillStyle = C.blue; g.font = '400 22px "ZCOOL QingKe HuangYou", "Noto Sans SC", sans-serif'; g.textAlign = "left"; g.textBaseline = "middle";
+    g.fillText("大白兔", (x0 + x1) / 2 - lw2 * .02, lyy + 1);
+  }
+  function showFact(i, animate) {
+    const F = DATA.facts;
+    if (!F.length) return;
+    fi = ((i % F.length) + F.length) % F.length;
+    factN.textContent = t("facts.n", { i: fi + 1, n: F.length });
+    factText.innerHTML = pick(F[fi]);
+    if (animate && !REDUCE) flip = 1;
+  }
+  function popCandy(c) {
+    c.pop = .001;
+    const [a, b] = c.p;
+    for (const q of [a, b]) { const o = c.o[c.p.indexOf(q)]; o[0] = q[0] + (Math.random() - .5) * 6; o[1] = q[1] + 26; }
+    showFact(fi + 1, true);
+  }
+  cv.addEventListener("pointerdown", e => {
+    const r = cv.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    let best = null, bd = 1e9;
+    for (const c of candies) {
+      if (c.pop) continue;
+      const [a, b] = c.p, dx = b[0] - a[0], dy = b[1] - a[1];
+      const s = clamp(((x - a[0]) * dx + (y - a[1]) * dy) / (dx * dx + dy * dy || 1), 0, 1);
+      const d = Math.hypot(a[0] + dx * s - x, a[1] + dy * s - y);
+      if (d < bd) { bd = d; best = c; }
+    }
+    if (best && bd < best.r * 2.2) popCandy(best);
+    else { for (const c of candies) for (const k of [0, 1]) { c.o[k][0] -= (Math.random() - .5) * 4; c.o[k][1] += 5; } }
+  });
+  $("#factNext").addEventListener("click", () => { const live = candies.filter(c => !c.pop); if (live.length) popCandy(live.reduce((a, c) => (c.p[0][1] < a.p[0][1] ? c : a))); else showFact(fi + 1, true); });
+  function renderList() { $("#factList").innerHTML = DATA.facts.map(f => `<li>${pick(f)}</li>`).join(""); showFact(fi, false); }
+  langHooks.push(renderList);
+  return comp(box, {
+    measure, renderList,
+    update(dt, now) {
+      if (!J) return;
+      const steps = Math.min(4, Math.max(1, Math.round(dt * 120)));
+      for (let s = 0; s < steps; s++) sim(dt / steps);
+      for (const c of candies) if (c.pop) {
+        c.pop += dt / 1.1;
+        if (c.pop >= 1) { const i = candies.indexOf(c); candies[i] = makeCandy(i, (now * .37) % 1); candies[i].p.forEach(q => q[1] = J.y0 - J.cr * 3); candies[i].o = candies[i].p.map(q => q.slice()); }
+      }
+      draw(now);
+      flip = damp(flip, 0, 7, dt);
+      card.style.transform = flip > .002 ? `perspective(800px) rotateX(${(flip * 24).toFixed(2)}deg) translateY(${(flip * -10).toFixed(2)}px)` : "";
+    },
+  });
+})();
+
+/* ---------------------------------------------------------------- counters: roll up when first seen (they rest at their final value) */
+const counted = new WeakSet();
+const cio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting || counted.has(e.target) || REDUCE) return;
+  counted.add(e.target);
+  const el = e.target, txt = el.textContent, m = txt.match(/\d[\d.,\u202f\u00a0 ]*\d|\d/);
+  if (!m) return;
+  const raw = m[0], num = parseInt(raw.replace(/\D/g, ""), 10);
+  if (!isFinite(num) || num < 10) return;
+  const grouped = /\D/.test(raw), sep = grouped ? raw.match(/\D/)[0] : "";
+  const fmt = v => { const s = String(Math.round(v)); return grouped ? s.replace(/\B(?=(\d{3})+(?!\d))/g, sep) : s; };
+  const t0 = performance.now(), T = 1100;
+  const step = now => { const k = clamp((now - t0) / T, 0, 1), e2 = 1 - Math.pow(1 - k, 3); el.textContent = txt.replace(raw, fmt(num * e2)); if (k < 1) requestAnimationFrame(step); else el.textContent = txt; };
+  requestAnimationFrame(step);
+}), { threshold: .6 });
+
+/* ---------------------------------------------------------------- static sections */
+function renderStatic() {
+  $("#facts3").innerHTML = DATA.facts3.map(f => `<div><b>${pick(f.v)}</b><span>${pick(f.l)}</span></div>`).join("");
+  $("#stats").innerHTML = DATA.stats.map(f => `<div><b${f.count ? " data-count" : ""}>${pick(f.v)}</b><span>${pick(f.l)}</span></div>`).join("");
+  $("#sources").innerHTML = DATA.sources.map(gp => `<div><h3>${pick(gp.h)}</h3><ul>${gp.items.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.title}</a></li>`).join("")}</ul></div>`).join("");
+  $$("[data-count]").forEach(el => cio.observe(el));
+}
+langHooks.push(renderStatic);
+
+/* ---------------------------------------------------------------- start */
+const ICONS = window.WR_ICONS || {};
+async function start() {
+  setLang(detectLang(), false);
+  history.render(); ring.render(); pops.render(); jar.renderList();
+  measureAll();
+  try { await Promise.all(['400 150px "ZCOOL QingKe HuangYou"', "800 76px Fraunces", "600 34px Figtree"].map(f => document.fonts.load(f))); } catch (e) {}
+  hero.init();
+  measureAll();
+  requestAnimationFrame(frame);
+}
+start();
+})();
+</script>
