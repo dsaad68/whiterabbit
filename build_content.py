@@ -30,7 +30,7 @@ EN_DE_NB = [
     re.compile(r"(?<=US\$) (?=\d)"),
     re.compile(r"(?:(?<=\bmillion)|(?<=\bbillion)|(?<=\bMillionen)|(?<=\bMilliarden)) (?=(?:yuan|Yuan|kilos|Kilo|tonnes|Tonnen|dollars|US-Dollar)\b)"),
 ]
-NAMES = ("Lu Xiuqin", "Zhou Enlai", "Feng Boyong", "Liu Yiqing")
+NAMES = ("Lu Xiuqin", "Zhou Enlai", "Feng Boyong", "Liu Yiqing", "Daniel Saad")
 HAN = r"㐀-䶿一-鿿豈-﫿"
 CJK_RUN = re.compile("[" + HAN + "]+(?:[　-〿＀-￯·]+[" + HAN + "]+)*")
 DE_TITLE = re.compile(r"Chinesischer Hasenzucker")

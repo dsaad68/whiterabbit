@@ -92,6 +92,8 @@ h1 .lat em {{ font-style: italic; font-weight: 400; color: {RED}; }}
 .scan i {{ width: 7px; height: 7px; border-radius: 50%; background: {RED}; }}
 .scan .zhs {{ font-family: "ZCOOL QingKe HuangYou"; font-weight: 400; font-size: 31px; color: {BLUE}; }}
 .url {{ margin-top: 14px; font: 500 25px/1.2 Figtree; color: {BLUE}; letter-spacing: .01em; }}
+.by {{ margin-top: 22px; font: 400 italic 26px/1.2 Fraunces; font-variation-settings: "SOFT" 100, "opsz" 36; color: {INK}; }}
+.by b {{ font-style: normal; font-weight: 650; color: {RED}; }}
 .candy {{ position: absolute; width: 170px; height: 68px; }}
 </style></head><body>
 <div class="card">
@@ -102,6 +104,7 @@ h1 .lat em {{ font-style: italic; font-weight: 400; color: {RED}; }}
     <div class="qr">{svg}</div>
     <p class="scan">Scan to unwrap <i></i> Scannen &amp; auspacken <i></i> <span class="zhs">扫一扫</span></p>
     <p class="url">dsaad68.github.io/whiterabbit</p>
+    <p class="by">a fan page by <b>Daniel Saad</b></p>
   </div>
   <svg class="candy" style="left:-44px; top:560px; transform: rotate(-24deg)" viewBox="0 0 170 68">{candy}</svg>
   <svg class="candy" style="right:-46px; top:930px; transform: rotate(18deg)" viewBox="0 0 170 68">{candy}</svg>

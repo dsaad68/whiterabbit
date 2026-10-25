@@ -4,6 +4,14 @@ A fan page about White Rabbit candy (大白兔奶糖) in English, German and Chi
 
 Live at **https://dsaad68.github.io/whiterabbit/**
 
+By **Daniel Saad**.
+
+<p align="center">
+  <a href="https://dsaad68.github.io/whiterabbit/"><img src="qr/whiterabbit-qr-card.png" alt="QR code for dsaad68.github.io/whiterabbit, on a White Rabbit wrapper-style card" width="420"></a>
+</p>
+
+Scan it to open the page. The card and a plain version (`qr/whiterabbit-qr.png`, `qr/whiterabbit-qr.svg` for print) are made by `python3 qr/make_qr.py`, then rendered with `node qr/render.js`.
+
 The page is a single self-contained `index.html` (fonts come from Google Fonts). GitHub Pages serves it straight from the root of `main`; `.nojekyll` turns off Jekyll processing.
 
 ## Editing

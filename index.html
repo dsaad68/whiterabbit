@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>White Rabbit Candy</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<meta name="author" content="Daniel Saad">
 <meta name="description" content="大白兔奶糖, the White Rabbit creamy candy from Shanghai: what it is, its history since 1943, the 1972 diplomatic gift, its kinds and its place in pop culture, in English, German and Chinese.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -243,7 +244,8 @@ html:lang(zh-Hans) .foot h2 { font: 400 var(--step-2)/1.1 var(--f-zh-display); }
 .src h3 { margin: 0 0 8px; font: 700 12px/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
 .src ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
 .src li { overflow-wrap: anywhere; line-height: 1.4; }
-.disc { margin-top: 36px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .25); font-size: var(--step--1); opacity: .85; max-width: 80ch; }
+.by { margin: 36px 0 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .25); font: 600 var(--step-0)/1.4 var(--f-body); letter-spacing: .02em; }
+.disc { margin-top: 10px; font-size: var(--step--1); opacity: .85; max-width: 80ch; }
 
 /* Chinese words inside English or German text, and numbers kept with their units */
 :is(.prose, .card, .pop, .fact, .caveat, .note, .disc, .kilo, #factList, .ch-head p, .lede, .facts3, .stats, .src) span[lang="zh-Hans"] { font-family: var(--f-zh); }
@@ -487,6 +489,7 @@ html:lang(zh-Hans) .kilo b { letter-spacing: 0; }
   <div class="wrap">
     <h2 data-i18n="foot.sources"></h2>
     <div class="src" id="sources"></div>
+    <p class="by" data-i18n="foot.by"></p>
     <p class="disc" data-i18n="foot.disc"></p>
   </div>
 </footer>
@@ -559,6 +562,7 @@ const CONTENT_UI = {
   "kinds.sub": "For decades there was one flavour: milk. New ones arrived from the early 2000s, and by 2023 the brand counted 16 of them. Drag the ring, or use the arrows.",
   "pop.sub": "A childhood candy that became lip balm, perfume, milk tea, fashion, art and toys.",
   "foot.disc": "A fan page made for fun. Not affiliated with Shanghai Guan Sheng Yuan Food Co., which owns the <span lang=\"zh-Hans\">大白兔</span> / White Rabbit trademarks. The rabbit and the candies are drawn for this page. Figures are the latest published ones we could find; where sources disagree, the page says so.",
+  "foot.by": "A fan page by Daniel\u00a0Saad",
   "a11y.top": "White Rabbit, back to the top",
   "a11y.fps": "Measured frame rate",
   "a11y.candy": "A White Rabbit candy that untwists and unwraps as you scroll",
@@ -584,6 +588,7 @@ const CONTENT_UI = {
   "kinds.sub": "Jahrzehntelang gab es nur eine Sorte: Milch. Ab Anfang der 2000er kamen neue dazu, bis 2023 ganze 16. Dreh am Ring oder tipp auf die Pfeile.",
   "pop.sub": "Ein Kindheitsbonbon, aus dem Lippenbalsam, Parfüm, Milchtee, Mode, Kunst und Spielzeug wurden.",
   "foot.disc": "Eine Fanseite, aus Spaß gemacht. Keine Verbindung zu Shanghai Guan Sheng Yuan Food Co., der die Marken <span lang=\"zh-Hans\">大白兔</span> / White Rabbit gehören. Hase und Bonbons wurden eigens für diese Seite gezeichnet. Die Zahlen sind die neuesten veröffentlichten, die wir finden konnten; wo Quellen sich widersprechen, steht das dabei.",
+  "foot.by": "Eine Fanseite von Daniel\u00a0Saad",
   "a11y.top": "White Rabbit, zurück nach oben",
   "a11y.fps": "Gemessene Bildrate",
   "a11y.candy": "Ein White-Rabbit-Bonbon, das sich beim Scrollen aufdreht und auspackt",
@@ -609,6 +614,7 @@ const CONTENT_UI = {
   "kinds.sub": "很长一段时间里，大白兔只有一种口味：奶味。进入<span class=\"nw\">21世纪</span>后才陆续推出新口味，到<span class=\"nw\">2023年</span>已有<span class=\"nw\">16种</span>新口味。拖动转盘，或点箭头挨个看看。",
   "pop.sub": "一颗童年的糖，变成了润唇膏、香水、奶茶、时装、艺术品和潮玩。",
   "foot.disc": "本页是爱好者出于兴趣制作的非官方页面，与“大白兔”商标所有者上海冠生园食品有限公司没有任何关联。页面中的兔子和奶糖均为自行绘制。数据均取自我们能找到的最新公开资料；各方说法不一之处，文中都已注明。",
+  "foot.by": "本页由 Daniel Saad 制作",
   "a11y.top": "大白兔，回到顶部",
   "a11y.fps": "实测帧率",
   "a11y.candy": "一颗大白兔奶糖，随着页面滚动拧开、剥开糖纸",
