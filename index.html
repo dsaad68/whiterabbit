@@ -222,7 +222,7 @@ html:lang(zh-Hans) .pop h3 { font: 700 var(--step-1)/1.35 var(--f-zh); }
 /* ---------- fun facts: the jar ---------- */
 .jar-box { position: relative; height: clamp(380px, 56vh, 560px); touch-action: pan-y; }
 #jar { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: pointer; }
-.fact { position: relative; padding: 26px 24px 22px; border-radius: 28px; background: var(--milk); min-height: 220px; display: grid; align-content: start; gap: 12px; transform-origin: 50% 0; }
+.fact { position: relative; overflow: clip; padding: 26px 24px 22px; border-radius: 28px; background: var(--milk); min-height: 220px; display: grid; align-content: start; gap: 12px; transform-origin: 50% 0; }
 .fact .n { font: 700 13px/1 var(--f-body); letter-spacing: .14em; color: var(--red-ink); text-transform: uppercase; font-variant-numeric: tabular-nums; }
 html:lang(zh-Hans) .fact .n { letter-spacing: .2em; font-family: var(--f-zh); }
 .fact p { margin: 0; font: 500 var(--step-1)/1.45 var(--f-display); font-variation-settings: "SOFT" 100, "opsz" 24; color: var(--ink); text-wrap: pretty; }
@@ -2337,7 +2337,7 @@ const jar = (() => {
   const box = $("#jarBox"), cv = $("#jar"), g = cv.getContext("2d");
   const factN = $("#factN"), factText = $("#factText"), card = $("#factCard");
   const BANDS = [C.red, C.blue, "#E8A23A", "#3E8E5E", "#8A4B2A"];
-  let W = 0, H = 0, dpr = 1, J = null, candies = [], fi = 0, flip = 0;
+  let W = 0, H = 0, dpr = 1, J = null, candies = [], fi = 0, swap = 0;
   let acc = 0, still = 0, asleep = false, dirty = true, sprites = [], back = null, front = null;
   const N = 30, STEP = 1 / 120, snap = new Float64Array(N * 4);
   function geom() {
@@ -2350,7 +2350,7 @@ const jar = (() => {
     const x = lerp(J.x0 + r * 2, J.x1 - r * 2, ((i * 0.618034 + seed) % 1));
     const y = J.y0 - r * 2 - (i % 7) * r * 2.4 - Math.floor(i / 7) * r * 3;
     const a = (i * 1.7) % Math.PI;
-    const c = { r, len, bi: i % BANDS.length, pop: 0 };
+    const c = { r, len, bi: i % BANDS.length, pop: 0, fade: 1 };
     c.p = [[x - Math.cos(a) * len / 2, y - Math.sin(a) * len / 2], [x + Math.cos(a) * len / 2, y + Math.sin(a) * len / 2]];
     c.o = c.p.map(q => q.slice());
     return c;
@@ -2446,6 +2446,7 @@ const jar = (() => {
     const gdd = 2200 * dt * dt, n = candies.length;
     for (let i = 0; i < n; i++) {
       const c = candies[i];
+      if (c.pop) continue;
       for (let k = 0; k < 2; k++) {
         const q = c.p[k], o = c.o[k];
         const vx = (q[0] - o[0]) * .995, vy = (q[1] - o[1]) * .995;
@@ -2456,7 +2457,8 @@ const jar = (() => {
     for (let it = 0; it < 4; it++) {
       for (let i = 0; i < n; i++) {
         // keep the capsule's length
-        const c = candies[i], a = c.p[0], b = c.p[1], dx = b[0] - a[0], dy = b[1] - a[1], d = Math.sqrt(dx * dx + dy * dy) || 1, k = (d - c.len) / d / 2;
+        const c = candies[i]; if (c.pop) continue;
+        const a = c.p[0], b = c.p[1], dx = b[0] - a[0], dy = b[1] - a[1], d = Math.sqrt(dx * dx + dy * dy) || 1, k = (d - c.len) / d / 2;
         a[0] += dx * k; a[1] += dy * k; b[0] -= dx * k; b[1] -= dy * k;
       }
       for (let i = 0; i < n; i++) {
@@ -2485,27 +2487,57 @@ const jar = (() => {
   function draw() {
     g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, cv.width, cv.height);
     g.drawImage(back, 0, 0);
-    for (const c of candies) {
-      const a = c.p[0], b = c.p[1], cx = (a[0] + b[0]) / 2, cy = (a[1] + b[1]) / 2, dx = b[0] - a[0], dy = b[1] - a[1], d = Math.sqrt(dx * dx + dy * dy) || 1;
-      const co = dx / d * dpr, si = dy / d * dpr, sp = sprites[c.bi];
-      g.globalAlpha = c.pop ? 1 - sstep(.5, 1, c.pop) : 1;
-      g.setTransform(co, si, -si, co, cx * dpr, cy * dpr);
-      g.drawImage(sp.c, -sp.w / 2, -sp.h / 2, sp.w, sp.h);
-    }
+    // candies in the jar sit behind the glass; a popped one is lifted out in front of it
+    for (const c of candies) if (!c.pop) drawCandy(c);
     g.globalAlpha = 1; g.setTransform(1, 0, 0, 1, 0, 0);
     g.drawImage(front, 0, 0);
+    for (const c of candies) if (c.pop) drawCandy(c);
+    g.globalAlpha = 1; g.setTransform(1, 0, 0, 1, 0, 0);
+  }
+  function drawCandy(c) {
+    const sp = sprites[c.bi];
+    let cx, cy, ang, sc = dpr;
+    if (c.pop) {
+      // lifted out of the jar on an eased arc, turning level and growing a little, then fading
+      const f = c.from, k = 1 - Math.pow(1 - Math.min(c.pop, 1), 3);
+      cx = lerp(f.x, f.tx, k); cy = lerp(f.y, f.ty, k) - Math.sin(k * Math.PI) * J.cr * 2;
+      ang = lerp(f.a, f.ta, k); sc = dpr * lerp(1, 1.3, k);
+      g.globalAlpha = 1 - sstep(.55, 1, c.pop);
+    } else {
+      const a = c.p[0], b = c.p[1];
+      cx = (a[0] + b[0]) / 2; cy = (a[1] + b[1]) / 2; ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+      g.globalAlpha = c.fade;
+    }
+    const co = Math.cos(ang) * sc, si = Math.sin(ang) * sc;
+    g.setTransform(co, si, -si, co, cx * dpr, cy * dpr);
+    g.drawImage(sp.c, -sp.w / 2, -sp.h / 2, sp.w, sp.h);
   }
   function showFact(i, animate) {
     const F = DATA.facts;
     if (!F.length) return;
     fi = ((i % F.length) + F.length) % F.length;
-    factN.textContent = t("facts.n", { i: fi + 1, n: F.length });
-    factText.innerHTML = pick(F[fi]);
-    if (animate && !REDUCE) flip = 1;
+    const write = () => { factN.textContent = t("facts.n", { i: fi + 1, n: F.length }); factText.innerHTML = pick(F[fi]); };
+    const my = ++swap;
+    if (card.getAnimations) card.getAnimations().forEach(a => a.cancel());
+    if (!animate || REDUCE || !card.animate) { write(); return; }
+    const h0 = card.offsetHeight;
+    const out = card.animate([{ opacity: 1, transform: "none" }, { opacity: 0, transform: "translateY(-6px)" }], { duration: 150, easing: "ease-in", fill: "forwards" });
+    out.finished.then(() => {
+      if (my !== swap) return;
+      write();
+      const h1 = card.offsetHeight;
+      out.cancel();
+      const ease = "cubic-bezier(.2, .8, .2, 1)";
+      card.animate([{ opacity: 0, transform: "perspective(800px) rotateX(14deg) translateY(10px)" }, { opacity: 1, transform: "none" }], { duration: 420, easing: ease });
+      if (Math.abs(h1 - h0) > 1) card.animate([{ height: h0 + "px" }, { height: h1 + "px" }], { duration: 320, easing: ease });
+    }, () => {});
   }
   function popCandy(c) {
+    const [a, b] = c.p, x = (a[0] + b[0]) / 2, y = (a[1] + b[1]) / 2;
+    let ang = Math.atan2(b[1] - a[1], b[0] - a[0]);
+    if (ang > Math.PI / 2) ang -= Math.PI; else if (ang < -Math.PI / 2) ang += Math.PI;   // a capsule looks the same both ways: turn the short way to level
+    c.from = { x, y, a: ang, tx: lerp(x, (J.x0 + J.x1) / 2, .6), ty: J.y0 - J.cr * 4, ta: (Math.random() - .5) * .5 };
     c.pop = .001;
-    for (let k = 0; k < 2; k++) { const q = c.p[k], o = c.o[k]; o[0] = q[0] + (Math.random() - .5) * 6; o[1] = q[1] + 26; }
     wake();
     showFact(fi + 1, true);
   }
@@ -2531,10 +2563,12 @@ const jar = (() => {
     update(dt, now) {
       if (!J) return;
       let popping = false;
-      for (const c of candies) if (c.pop) {
+      for (const c of candies) {
+        if (c.fade < 1) { popping = true; c.fade = Math.min(1, c.fade + dt / .3); }
+        if (!c.pop) continue;
         popping = true;
-        c.pop += dt / 1.1;
-        if (c.pop >= 1) { const i = candies.indexOf(c); candies[i] = makeCandy(i, (now * .37) % 1); candies[i].p.forEach(q => q[1] = J.y0 - J.cr * 3); candies[i].o = candies[i].p.map(q => q.slice()); }
+        c.pop += dt / .9;
+        if (c.pop >= 1) { const i = candies.indexOf(c), nc = makeCandy(i, (now * .37) % 1); nc.p.forEach(q => q[1] = J.y0 - J.cr * 3); nc.o = nc.p.map(q => q.slice()); nc.fade = 0; candies[i] = nc; }
       }
       if (!asleep || popping) {
         // a fixed 120 Hz step, so the candies fall the same way on 60, 90, 120 and 144 Hz screens
@@ -2548,10 +2582,6 @@ const jar = (() => {
         dirty = true;
       }
       if (dirty) { draw(); dirty = false; }
-      if (flip > .002 || card.style.transform) {
-        flip = damp(flip, 0, 7, dt);
-        card.style.transform = flip > .002 ? `perspective(800px) rotateX(${(flip * 24).toFixed(2)}deg) translateY(${(flip * -10).toFixed(2)}px)` : "";
-      }
     },
   });
 })();
